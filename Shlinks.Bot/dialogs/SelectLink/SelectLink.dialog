@@ -1,0 +1,70 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "3PAyAY",
+    "name": "SelectLink",
+    "comment": "Select a link"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "IEoI3o"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "KNb5oP"
+          },
+          "assignments": [
+            {
+              "property": "conversation.currentOperation",
+              "value": "SelectLink"
+            },
+            {
+              "property": "conversation.link.domain",
+              "value": "=coalesce(conversation.link.domain, settings[\"Shlinks\"].defaultDomain)"
+            }
+          ]
+        },
+        {
+          "$kind": "Shlinks.SelectLink",
+          "$designer": {
+            "id": "vIwiqx"
+          },
+          "domain": "=conversation.link.domain",
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "property": "turn.selectedLink",
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "resultProperty": "turn.selectedLink",
+          "prompt": "${Shlinks.SelectLink_Prompt_vIwiqx()}",
+          "invalidPrompt": "${Shlinks.SelectLink_InvalidPrompt_vIwiqx()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "8NAjHF"
+          },
+          "assignments": [
+            {
+              "property": "dialog.result",
+              "value": "turn.selectedLink"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "SelectLink.lg",
+  "recognizer": "SelectLink.lu.qna",
+  "id": "SelectLink"
+}

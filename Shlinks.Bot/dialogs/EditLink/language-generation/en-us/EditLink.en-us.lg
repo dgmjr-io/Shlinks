@@ -1,0 +1,67 @@
+[import](common.lg)
+
+# Shlinks.SelectLink_Prompt_dQxNqB()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_dQxNqB_text()}
+]
+
+# Shlinks.SelectLink_Prompt_dQxNqB_text()
+- Select the link you'd like to edit:
+# Shlinks.SelectLink_InvalidPrompt_dQxNqB()
+[Activity
+    Text = ${Shlinks.SelectLink_InvalidPrompt_dQxNqB_text()}
+]
+
+# Shlinks.SelectLink_InvalidPrompt_dQxNqB_text()
+- Bro, that wasn't one of the options I gave you.  Try again.
+
+# ChoiceInput_Prompt_WFys0t_text()
+- ```Ok, Bro, here's what the link looks like now. What would you like to change?
+
+
+**Link:** https://${conversation.link.domain}/${conversation.link.slug}
+
+**Redirects to:** ${conversation.link.url}
+
+**Tags:** ${join(conversation.link.tags, ", ")}
+
+
+What would you like to change?```
+# ChoiceInput_Prompt_WFys0t()
+[Activity
+    Text = ${ChoiceInput_Prompt_WFys0t_text()}
+]
+
+# SendActivity_T9SM2M_text()
+- Bro, you have to pick from the choices I gave you.  Let's try this again, shall we?
+- Bro, that wasn't one of the options.  Try again.
+- Bro, you don't make the rules around here; I do!  Now, where were we?
+# SendActivity_T9SM2M()
+[Activity
+    Text = ${SendActivity_T9SM2M_text()}
+]
+
+# SendActivity_AtP9zC_text()
+- ```Your link has been updated and is now live!
+
+Visit the modified at ${turn.createdLink.ShortUrl}.```
+# SendActivity_AtP9zC()
+[Activity
+    Text = ${SendActivity_AtP9zC_text()}
+]
+
+
+# Shlinks.SelectLink_Prompt_c2vCVK()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_c2vCVK_text()}
+]
+
+# Shlinks.SelectLink_Prompt_c2vCVK_text()
+- Select the link you want to edit:
+# Shlinks.SelectLink_InvalidPrompt_c2vCVK()
+[Activity
+    Text = ${Shlinks.SelectLink_InvalidPrompt_c2vCVK_text()}
+]
+
+# Shlinks.SelectLink_InvalidPrompt_c2vCVK_text()
+- Bro, that wasn't one of the options I gave you...  Now try again:

@@ -1,0 +1,27 @@
+<Project>
+  <Import Project="Sdk.targets" Sdk="DgmjrSdk" />
+
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="@(PackageReference->'%(RecursiveDir)bin/$(Configuration)/$(TargetFramework)/%(Identity).dll')" Condition="Exists(@(PackageReference->'%(RecursiveDir)bin/$(Configuration)/$(TargetFramework)/%(Identity).dll'))" />
+    <Reference Include="@(PackageReference->'%(RecursiveDir)bin/$(Configuration)/netstandsrd2.0/%(Identity).dll')" Condition="Exists(@(PackageReference->'%(RecursiveDir)bin/$(Configuration)/netstandsrd2.0/%(Identity).dll'))" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json.Usings" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks.Api" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks.Models" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks.Components" Version="[0.0.1-Local,)" />
+  </ItemGroup>
+
+  <!-- <Import Project="Sdk.targets" Sdk="NuGetPush" /> -->
+  <!-- <Import Project="../targets/PushDgmjrNuGetSoftware.targets" Sdk="NuGetPush" /> -->
+  <Target Name="NuGetPushAll" AfterTargets="Build" Condition="'$(IsBuildingInDocker)' != 'true'">
+    <CallTarget Targets="PushDgmjrNuGetSoftware" />
+  </Target>
+  <Target Name="GetPackageMetadata" DependsOnTargets="$(GetPackageMetadataDependsOn)" />
+</Project>

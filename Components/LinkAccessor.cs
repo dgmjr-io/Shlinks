@@ -1,0 +1,152 @@
+// /*
+//  * LinkAccessor.cs
+//  *     Created: 2024-51-19T22:51:26-04:00
+//  *    Modified: 2024-51-19T22:51:26-04:00
+//  *      Author: David G. Moore, Jr. <david@dgmjr.io>
+//  *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+//  *     License: MIT (https://opensource.org/licenses/MIT)
+//  */
+
+// namespace Shlinks.Components;
+
+// using LinkFactory = Func<UserData>;
+
+// public class UserData : INotifyPropertyChanged
+// {
+//     private const string PhotoUrlPlaceholder = "https://via.placeholder.com/150?text={0}";
+
+//     public UserData()
+//     {
+//         PropertyChanged += (sender, e) => { }; // Do nothing
+//     }
+
+//     private string? _firstName;
+//     [JsonProperty("first_name")]
+//     [JProp("first_name")]
+//     public string? FirstName { get => _firstName; set { _firstName = value; OnPropertyChanged(); } }
+
+//     private string? _lastName;
+//     [JsonProperty("last_name")]
+//     [JProp("last_name")]
+//     public string? LastName { get => _lastName; set { _lastName = value; OnPropertyChanged(); } }
+
+//     private string? _username;
+//     [JsonProperty("username")]
+//     [JProp("username")]
+//     public string? Username { get => _username; set { _username = value; OnPropertyChanged(); } }
+
+//     private string? _languageCode;
+//     [JsonProperty("language_code")]
+//     [JProp("language_code")]
+//     public string? LanguageCode { get => _languageCode; set { _languageCode = value; OnPropertyChanged(); } }
+
+//     private long _id;
+//     [JsonProperty("id")]
+//     [JProp("id")]
+//     public long Id { get => _id; set { _id = value; OnPropertyChanged(); } }
+
+//     private bool _isBot;
+//     [JsonProperty("is_bot")]
+//     [JProp("is_bot")]
+//     public bool IsBot { get => _isBot; set { _isBot = value; OnPropertyChanged(); } }
+
+//     private bool _isPremium;
+//     [JsonProperty("is_premium")]
+//     [JProp("is_premium")]
+//     public bool IsPremium { get => _isPremium; set { _isPremium = value; OnPropertyChanged(); } }
+
+//     private string? _photoUrl;
+//     [JsonProperty("photo_url")]
+//     [JProp("photo_url")]
+//     public string? PhotoUrl { get => _photoUrl ?? Format(PhotoUrlPlaceholder, Username ?? Id.ToString()); set { _photoUrl = value; OnPropertyChanged(); } }
+
+//     private string? _biography;
+//     [JsonProperty("biography")]
+//     [JProp("biography")]
+//     public string? Biography { get => _biography; set { _biography = value; OnPropertyChanged(); } }
+
+//     private void OnPropertyChanged([CallerMemberName] string? propertyName = null)
+//     {
+//         PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+//     }
+
+//     public event PropertyChangedEventHandler? PropertyChanged;
+
+//     public string ToJson()
+//     {
+//         return SerializeObject(this);
+//     }
+
+//     public static UserData FromJson(string json)
+//     {
+//         return DeserializeObject<UserData>(json) ?? NotATelegramUser;
+//     }
+
+//     public const string NotATelegramUserMessage = "Not a Telegram user";
+
+//     public static readonly UserData NotATelegramUser = new()
+//     {
+//         Id = long.MinValue,
+//         FirstName = NotATelegramUserMessage,
+//         LastName = NotATelegramUserMessage,
+//         Username = NotATelegramUserMessage,
+//         Biography = NotATelegramUserMessage,
+//         LanguageCode = "en",
+//         IsBot = false,
+//         IsPremium = false,
+//         PhotoUrl = "https://via.placeholder.com/150?text=Not+a+Telegram+user"
+//     };
+// }
+
+// public class UserDataAccessor(MsBotUserState userState)
+// {
+//     public IStatePropertyAccessor<UserData> Accessor { get; } = userState.CreateProperty<UserData>(Telegram);
+//     public MsBotUserState UserState => userState;
+
+//     public const string Telegram = "telegram";
+
+//     public async Task<UserData> GetAsync(ITurnContext turnContext, CancellationToken cancellationToken = default)
+//     {
+//         return await Accessor.GetAsync(turnContext, NewUserDataFactory(turnContext), cancellationToken);
+//     }
+
+//     protected virtual TelegramUserDataFactory NewUserDataFactory(ITurnContext turnContext)
+//     {
+//         return () =>
+//         {
+//             var userData = new UserData();
+//             var telegramChannelData = turnContext.GetTelegramChannelData();
+//             telegramChannelData.AssignTo(userData);
+//             Accessor.SetAsync(turnContext, userData);
+//             UserState.SaveChangesAsync(turnContext, cancellationToken: default);
+
+//             userData.PropertyChanged += (sender, e) =>
+//             {
+//                 if (sender is UserData userData)
+//                 {
+//                     Accessor.SetAsync(turnContext, userData);
+//                     UserState.SaveChangesAsync(turnContext, cancellationToken: default);
+//                 }
+//             };
+//             return userData;
+//         };
+//     }
+
+//     public virtual async Task SetUserDataAsync(ITurnContext turnContext, string key, object value, CancellationToken cancellationToken = default)
+//     {
+//         var state = await UserState.CreateProperty<Dictionary<string, object>>(nameof(UserData)).GetAsync(turnContext, () => [], cancellationToken);
+//         state[key] = value;
+//     }
+
+//     public virtual async Task<T?> GetUserDataAsync<T>(ITurnContext turnContext, string key, CancellationToken cancellationToken = default)
+//     {
+//         var state = await UserState.CreateProperty<Dictionary<string, object>>(nameof(UserData)).GetAsync(turnContext, () => [], cancellationToken);
+//         return state.TryGetValue(key, out var value) ? (T)value : default;
+//     }
+
+//     public virtual async Task DeleteUserDataAsync(ITurnContext turnContext, string key, CancellationToken cancellationToken = default)
+//     {
+//         var state = await UserState.CreateProperty<Dictionary<string, object>>(nameof(UserData)).GetAsync(turnContext, () => [], cancellationToken);
+//         state.Remove(key);
+//     }
+// }

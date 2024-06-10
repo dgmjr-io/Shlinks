@@ -1,0 +1,147 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "FfmwQx",
+    "name": "CancelDialog",
+    "comment": "Asks the user If he's sure he wants to cancel and if so, cancels all active dialogs."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "CTeYi1"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.StackAction",
+          "$designer": {
+            "id": "I5f9eG"
+          },
+          "changeType": "count",
+          "itemsProperty": "conversation.currentOperationStack",
+          "resultProperty": "conversation.currentOperationStackCount"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "xoAqgE"
+          },
+          "condition": "=conversation.currentOperationStackCount > 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.ConfirmInput",
+              "$designer": {
+                "id": "GCJzsS"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": true,
+              "allowInterruptions": true,
+              "prompt": "${SendConfirmCancel()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "confirmChoices": [
+                {
+                  "action": {
+                    "type": "imBack",
+                    "value": true,
+                    "title": "Yes"
+                  },
+                  "value": "yes"
+                },
+                {
+                  "value": "no",
+                  "action": {
+                    "type": "imBack",
+                    "value": false,
+                    "title": "No"
+                  }
+                }
+              ],
+              "style": "suggestedAction",
+              "property": "dialog.confirmCancel"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "BpCwYJ"
+              },
+              "condition": "=dialog.confirmCancel",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "0FCSKw"
+                  },
+                  "property": "conversation.currentOperation",
+                  "value": "=null"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "D4DDBJ"
+                  },
+                  "activity": "${SendCancellationConfirmed()}"
+                },
+                {
+                  "$kind": "Dgmjr.CurrentOperationStack",
+                  "$designer": {
+                    "id": "HXN3oq"
+                  },
+                  "changeType": "clear"
+                },
+                {
+                  "$kind": "Microsoft.CancelAllDialogs",
+                  "$designer": {
+                    "id": "6uxPfL"
+                  },
+                  "activityProcessed": true
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "Jxdngu"
+                  },
+                  "activity": "${SendNowWhereWereWe()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "zUqQNW"
+              },
+              "activity": "${SendNothingToCancel()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "uXM6FE"
+              },
+              "activityProcessed": true,
+              "dialog": "HelpDialog"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "CancelDialog.lg",
+  "recognizer": "CancelDialog.lu.qna",
+  "id": "CancelDialog"
+}

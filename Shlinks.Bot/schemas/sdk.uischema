@@ -1,0 +1,3882 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "BotBuilderCommunity.EmailInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "description": "Collect information - Ask for a Email.",
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for a Email",
+      "order": [
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Email Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Email",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.GuidInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for a Guid",
+      "order": [
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Guid Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Guid",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.InternetProtocolInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for Internet Protocol Type",
+      "order": [
+        "ProtocolType",
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Internet Protocol Type(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Internet protocol type",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.MultiSelectChoiceInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "body": "=action.Result",
+        "defaultContent": "<prompt>",
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "description": "Pick one or more values from a list of choices",
+      "helpLink": "https://aka.ms/bf-composer-docs-dialog",
+      "hidden": [
+        "validations",
+        "property",
+        "defaultValueResponse"
+      ],
+      "label": "Prompt for Multi-Select-choice",
+      "order": [
+        "prompt",
+        "choices",
+        "Orientation",
+        "ActionName",
+        "Result",
+        "*"
+      ],
+      "subtitle": "Multi-Select-Choice Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Multi-Select-choice",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.NumberWithTypeInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for NumberWithType",
+      "order": [
+        "NumberType",
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "NumberWithType Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Number with type",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.NumberWithUnitInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for NumberWithUnit",
+      "order": [
+        "NumberUnit",
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "NumberWithUnit Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Number with unit",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.PhoneNumberInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "description": "Collect information - Ask for a phone number.",
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for Phone number",
+      "order": [
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Phone number Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "PhoneNumber",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.SocialMediaInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "description": "Collect information - Social media type(Mention or Hashtag)",
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for Social Media Type",
+      "order": [
+        "mediaType",
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Social Media Type(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "Social media type",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "BotBuilderCommunity.TrueFalseInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#BBEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": false,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "hidden": [
+        "property"
+      ],
+      "label": "Prompt for a True/False",
+      "order": [
+        "resultProperty",
+        "defaultLocale",
+        "*"
+      ],
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "True/False Input(Bot Builder Community)"
+    },
+    "menu": {
+      "label": "True/False",
+      "submenu": [
+        "Ask a question",
+        "Community"
+      ]
+    }
+  },
+  "Dgmjr.AboutThisBot": {
+    "form": {
+      "description": "Edit the \"About this Bot\" information.",
+      "fieldsets": [
+        {
+          "title": "About the Bot",
+          "label": "The Bot",
+          "subtitle": "About the bot",
+          "defaultExpanded": true,
+          "fields": [
+            "about"
+          ]
+        },
+        {
+          "title": "About the Authhor",
+          "label": "About the Authhor",
+          "subtitle": "Edit the \"about the author\" information.",
+          "defaultExpanded": true,
+          "fields": [
+            "author.name",
+            "author.email",
+            "author.about",
+            "author.website",
+            "author.github",
+            "author.linkedin",
+            "author.twitter",
+            "author.facebook",
+            "author.instagram"
+          ]
+        }
+      ],
+      "helpLink": "https://docs.dgmjr.io",
+      "label": "About this Bot",
+      "order": [
+        "*"
+      ],
+      "properties": {
+        "about": {
+          "description": "Edit the \"About the Bot\" information.",
+          "label": "About the Bot",
+          "widget": "textarea"
+        }
+      }
+    }
+  },
+  "Dgmjr.AboutThisBotIntentRecognizer": {
+    "form": {
+      "hidden": [
+        "entities"
+      ]
+    }
+  },
+  "Dgmjr.CurrentOperationStack": {
+    "flow": {
+      "body": {
+        "operation": "=coalesce(action.changeType, \"?\")",
+        "resource": "=coalesce(action.value, \"?\")",
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#ffffff",
+          "icon": "#ffffff",
+          "theme": "#1c1c3f"
+        },
+        "disableSDKTitle": true,
+        "icon": "=if(action.changeType == 'push', 'DoubleChevronDown', if(action.changeType == 'pop', 'DoubleChevronUp', if(action.changeType == 'peek', 'RedEye', if(action.changeType == 'clear', 'Clear', 'StatusCircleQuestionMark'))))",
+        "subtitle": "Perform an action on the current operation stack.",
+        "title": "=\"Current Operation Stack: \" + coalesce(action.changeType, 'No operation')",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "hidden": [
+        "itemsProperty"
+      ],
+      "label": "Perform an operation on the current operation stack",
+      "properties": {
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Current Operation Stack Action"
+    },
+    "menu": {
+      "label": "Current Operation Stack Action",
+      "submenu": [
+        "Manage properties",
+        "Stack"
+      ]
+    }
+  },
+  "Dgmjr.PopCurrentOperation": {
+    "flow": {
+      "body": {
+        "operation": "push",
+        "resource": "=coalesce(action.value, \"?\")",
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#ffffff",
+          "icon": "#ffffff",
+          "theme": "#1c1c3f"
+        },
+        "disableSDKTitle": true,
+        "icon": "DoubleChevronDown",
+        "subtitle": "Push a value onto the current operation stack.",
+        "title": "Push Current Operation",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "hidden": [
+        "itemsProperty",
+        "changeType",
+        "value"
+      ],
+      "label": "Pop a value off of the current operation stack",
+      "properties": {
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Pop Current Operation"
+    },
+    "menu": {
+      "label": "Pop Current Operation",
+      "submenu": [
+        "Manage properties",
+        "Stack"
+      ]
+    }
+  },
+  "Dgmjr.PushCurrentOperation": {
+    "flow": {
+      "body": {
+        "operation": "push",
+        "resource": "=coalesce(action.value, \"?\")",
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#ffffff",
+          "icon": "#ffffff",
+          "theme": "#1c1c3f"
+        },
+        "disableSDKTitle": true,
+        "icon": "DoubleChevronDown",
+        "subtitle": "Push a value onto the current operation stack.",
+        "title": "Push Current Operation",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "hidden": [
+        "itemsProperty",
+        "changeType",
+        "resultProperty"
+      ],
+      "label": "Push a value onto the current operation stack",
+      "properties": {
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Push Current Operation"
+    },
+    "menu": {
+      "label": "Push Current Operation",
+      "submenu": [
+        "Manage properties",
+        "Stack"
+      ]
+    }
+  },
+  "Dgmjr.StackAction": {
+    "flow": {
+      "body": {
+        "operation": "=coalesce(action.changeType, \"?\")",
+        "resource": "=coalesce(action.itemsProperty, \"?\")",
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#000000",
+          "icon": "#000000",
+          "theme": "#00ff2f"
+        },
+        "disableSDKTitle": true,
+        "icon": "=if(action.changeType == 'push', 'DoubleChevronDown', if(action.changeType == 'pop', 'DoubleChevronUp', if(action.changeType == 'peek', 'RedEye', if(action.changeType == 'clear', 'Clear', if(action.changeType == 'count', 'NumberField', 'StatusCircleQuestionMark')))))",
+        "subtitle": "Perform an action on a stack.",
+        "title": "=\"Stack: \" + coalesce(action.changeType, 'No operation')",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "hidden": [],
+      "label": "Perform a stack operation",
+      "properties": {
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Stack Action"
+    },
+    "menu": {
+      "label": "Stack Action",
+      "submenu": [
+        "Manage properties",
+        "Stack"
+      ]
+    }
+  },
+  "Dgmjr.Storage.Azb": {
+    "form": {
+      "description": "Connects the bot to Azure table storage.",
+      "fieldsets": [
+        {
+          "label": "Bot State Configuration",
+          "subtitle": "Bot State Configuration",
+          "fields": [
+            "BotState.ConnectionString",
+            "BotState.ContainerName",
+            "BotState.Uri"
+          ]
+        },
+        {
+          "label": "User State Configuration",
+          "subtitle": "User State Configuration",
+          "fields": [
+            "UserState.ConnectionString",
+            "UserState.ContainerName",
+            "UserState.Uri"
+          ]
+        },
+        {
+          "label": "Conversation State Configuration",
+          "subtitle": "Conversation State Configuration",
+          "fields": [
+            "ConversationState.ConnectionString",
+            "ConversationState.ContainerName",
+            "ConversationState.Uri"
+          ]
+        },
+        {
+          "label": "Transcript Configuration",
+          "subtitle": "Transcript Configuration",
+          "fields": [
+            "Transcript.ConnectionString",
+            "Transcript.ContainerName",
+            "Transcript.Uri"
+          ]
+        }
+      ],
+      "helpLink": "https://docs.dgmjr.io",
+      "label": "Azure Blobs Storage Configuration",
+      "order": [
+        "*"
+      ]
+    }
+  },
+  "Dgmjr.Storage.Azt": {
+    "form": {
+      "description": "Connects the bot to Azure table storage.",
+      "fieldsets": [
+        {
+          "title": "Bot State Configuration",
+          "fields": [
+            "BotState.ConnectionString",
+            "BotState.TableName",
+            "BotState.KeySuffix",
+            "BotState.CompatibilityMode",
+            "BotState.Uri"
+          ]
+        },
+        {
+          "title": "User State Configuration",
+          "fields": [
+            "UserState.ConnectionString",
+            "UserState.TableName",
+            "UserState.KeySuffix",
+            "UserState.CompatibilityMode",
+            "UserState.Uri"
+          ]
+        },
+        {
+          "title": "Conversation State Configuration",
+          "fields": [
+            "ConversationState.ConnectionString",
+            "ConversationState.TableName",
+            "ConversationState.KeySuffix",
+            "ConversationState.CompatibilityMode",
+            "ConversationState.Uri"
+          ]
+        },
+        {
+          "title": "Transcript Configuration",
+          "fields": [
+            "Transcript.ConnectionString",
+            "Transcript.TableName",
+            "Transcript.KeySuffix",
+            "Transcript.CompatibilityMode",
+            "Transcript.Uri"
+          ]
+        }
+      ],
+      "helpLink": "https://docs.dgmjr.io",
+      "label": "Azure Table Storage Configuration",
+      "order": [
+        "*"
+      ]
+    }
+  },
+  "Dgmjr.Storage.Cosmos": {
+    "form": {
+      "description": "Connects the bot to Azure table storage.",
+      "fieldsets": [
+        {
+          "title": "Bot State Configuration",
+          "fields": [
+            "BotState.*"
+          ]
+        },
+        {
+          "title": "User State Configuration",
+          "fields": [
+            "UserState.*"
+          ]
+        },
+        {
+          "title": "Conversation State Configuration",
+          "fields": [
+            "ConversationState.*"
+          ]
+        },
+        {
+          "title": "Transcript Configuration",
+          "fields": [
+            "Transcript.*"
+          ]
+        }
+      ],
+      "helpLink": "https://docs.dgmjr.io",
+      "label": "Azure Table Storage Configuration",
+      "order": [
+        "*"
+      ]
+    }
+  },
+  "Microsoft.AdaptiveDialog": {
+    "form": {
+      "description": "This configures a data driven dialog via a collection of events and actions.",
+      "helpLink": "https://aka.ms/bf-composer-docs-dialog",
+      "hidden": [
+        "triggers",
+        "generator",
+        "selector",
+        "schema",
+        "dialogs"
+      ],
+      "label": "Adaptive dialog",
+      "order": [
+        "recognizer",
+        "*"
+      ],
+      "properties": {
+        "recognizer": {
+          "description": "To understand what the user says, your dialog needs a \"Recognizer\"; that includes example words and sentences that users may use.",
+          "label": "Language Understanding"
+        }
+      }
+    }
+  },
+  "Microsoft.Ask": {
+    "flow": {
+      "body": {
+        "field": "activity",
+        "widget": "LgWidget"
+      },
+      "footer": {
+        "description": "= Default operation",
+        "property": "=action.defaultOperation",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "icon": "#5C2E91",
+          "theme": "#EEEAF4"
+        },
+        "icon": "MessageBot",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.defaultOperation",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-send-activity",
+      "label": "Send a response to ask a question",
+      "order": [
+        "activity",
+        "*"
+      ],
+      "subtitle": "Ask Activity"
+    },
+    "menu": {
+      "label": "Ask Activity",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.AttachmentInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#EEEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": true,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for a file or an attachment",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Attachment Input"
+    },
+    "menu": {
+      "label": "File or attachment",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.BeginDialog": {
+    "flow": {
+      "body": {
+        "dialog": "=action.dialog",
+        "widget": "DialogRef"
+      },
+      "footer": {
+        "description": "= Return value",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "label": "Begin a new dialog",
+      "order": [
+        "dialog",
+        "options",
+        "resultProperty",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Begin Dialog"
+    },
+    "menu": {
+      "label": "Begin a new dialog",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.BeginSkill": {
+    "flow": {
+      "body": {
+        "operation": "Host",
+        "resource": "=coalesce(action.skillEndpoint, \"?\")",
+        "singleline": true,
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#004578"
+        },
+        "icon": "Library",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bf-composer-docs-connect-skill",
+      "label": "Connect to a skill",
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Skill Dialog"
+    },
+    "menu": {
+      "label": "Connect to a skill",
+      "submenu": [
+        "Access external resources"
+      ]
+    }
+  },
+  "Microsoft.BreakLoop": {
+    "form": {
+      "label": "Break out of loop",
+      "subtitle": "Break out of loop"
+    },
+    "menu": {
+      "label": "Break out of loop",
+      "submenu": [
+        "Looping"
+      ]
+    }
+  },
+  "Microsoft.CancelAllDialogs": {
+    "flow": {
+      "body": {
+        "description": "(Event)",
+        "property": "=coalesce(action.eventName, \"?\")",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "label": "Cancel all active dialogs",
+      "subtitle": "Cancel All Dialogs"
+    },
+    "menu": {
+      "label": "Cancel all active dialogs",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.CancelDialog": {
+    "menu": {
+      "label": "Cancel dialog",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.ChoiceInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#EEEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": true,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt with multi-choice",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Choice Input"
+    },
+    "menu": {
+      "label": "Multi-choice",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.ConfirmInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#EEEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": true,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for confirmation",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Confirm Input"
+    },
+    "menu": {
+      "label": "Confirmation",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.ContinueConversation": {
+    "menu": {
+      "label": "Continue conversation",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.ContinueConversationLater": {
+    "menu": {
+      "label": "Continue conversation later",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.ContinueLoop": {
+    "form": {
+      "label": "Continue loop",
+      "subtitle": "Continue loop"
+    },
+    "menu": {
+      "label": "Continue loop",
+      "submenu": [
+        "Looping"
+      ]
+    }
+  },
+  "Microsoft.DateTimeInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#EEEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": true,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for a date or a time",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Date Time Input"
+    },
+    "menu": {
+      "label": "Date or time",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.DebugBreak": {
+    "form": {
+      "label": "Debug Break"
+    },
+    "menu": {
+      "label": "Debug break",
+      "submenu": [
+        "Debugging options"
+      ]
+    }
+  },
+  "Microsoft.DeleteActivity": {
+    "menu": {
+      "label": "Delete activity",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.DeleteProperties": {
+    "flow": {
+      "body": {
+        "items": "=action.properties",
+        "widget": "ListOverview"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-memory",
+      "label": "Delete properties",
+      "properties": {
+        "properties": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        }
+      },
+      "subtitle": "Delete Properties"
+    },
+    "menu": {
+      "label": "Delete properties",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.DeleteProperty": {
+    "flow": {
+      "body": "=action.property",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-memory",
+      "label": "Delete a property",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        }
+      },
+      "subtitle": "Delete Property"
+    },
+    "menu": {
+      "label": "Delete a property",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.EditActions": {
+    "flow": {
+      "body": "=action.changeType",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "label": "Modify active dialog",
+      "subtitle": "Edit Actions"
+    }
+  },
+  "Microsoft.EditArray": {
+    "flow": {
+      "body": {
+        "operation": "=coalesce(action.changeType, \"?\")",
+        "resource": "=coalesce(action.itemsProperty, \"?\")",
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-memory",
+      "label": "Edit an array property",
+      "properties": {
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Edit Array"
+    },
+    "menu": {
+      "label": "Edit an array property",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.EmitEvent": {
+    "flow": {
+      "body": {
+        "description": "(Event)",
+        "property": "=coalesce(action.eventName, \"?\")",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-custom-events",
+      "label": "Emit a custom event",
+      "subtitle": "Emit Event"
+    },
+    "menu": {
+      "label": "Emit a custom event",
+      "submenu": [
+        "Access external resources"
+      ]
+    }
+  },
+  "Microsoft.EndDialog": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "label": "End this dialog",
+      "subtitle": "End Dialog"
+    },
+    "menu": {
+      "label": "End this dialog",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.EndTurn": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "label": "End turn",
+      "subtitle": "End Turn"
+    },
+    "menu": {
+      "label": "End turn",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.Foreach": {
+    "flow": {
+      "loop": {
+        "body": "=concat(\"Each value in \", coalesce(action.itemsProperty, \"?\"))",
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "widget": "ForeachWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-controlling-conversation-flow",
+      "hidden": [
+        "actions"
+      ],
+      "label": "Loop: For each item",
+      "order": [
+        "itemsProperty",
+        "*"
+      ],
+      "properties": {
+        "index": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        },
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "value": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "For Each"
+    },
+    "menu": {
+      "label": "Loop: For each item",
+      "submenu": [
+        "Looping"
+      ]
+    }
+  },
+  "Microsoft.ForeachPage": {
+    "flow": {
+      "loop": {
+        "body": "=concat(\"Each page of \", coalesce(action.pageSize, \"?\"), \" in \", coalesce(action.page, \"?\"))",
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "widget": "ForeachWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-controlling-conversation-flow",
+      "hidden": [
+        "actions"
+      ],
+      "label": "Loop: For each page (multiple items)",
+      "order": [
+        "itemsProperty",
+        "pageSize",
+        "*"
+      ],
+      "properties": {
+        "itemsProperty": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        },
+        "page": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        },
+        "pageIndex": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "For Each Page"
+    },
+    "menu": {
+      "label": "Loop: For each page (multiple items)",
+      "submenu": [
+        "Looping"
+      ]
+    }
+  },
+  "Microsoft.GetActivityMembers": {
+    "flow": {
+      "body": {
+        "description": "= ActivityId",
+        "property": "=coalesce(action.activityId, \"?\")",
+        "widget": "PropertyDescription"
+      },
+      "footer": {
+        "description": "= Result property",
+        "property": "=coalesce(action.property, \"?\")",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "Get activity members",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.GetConversationMembers": {
+    "flow": {
+      "footer": {
+        "description": "= Result property",
+        "property": "=action.property",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "Get conversation members",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.GetConversationReference": {
+    "menu": {
+      "label": "Get conversation reference",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.GotoAction": {
+    "menu": {
+      "label": "Go to action",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.HttpRequest": {
+    "flow": {
+      "body": {
+        "operation": "=action.method",
+        "resource": "=action.url",
+        "singleline": true,
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Result property",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "hideFooter": "=!action.resultProperty",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-http",
+      "label": "Send an HTTP request",
+      "order": [
+        "method",
+        "url",
+        "body",
+        "headers",
+        "*"
+      ],
+      "properties": {
+        "resultProperty": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "HTTP Request"
+    },
+    "menu": {
+      "label": "Send an HTTP request",
+      "submenu": [
+        "Access external resources"
+      ]
+    }
+  },
+  "Microsoft.IfCondition": {
+    "flow": {
+      "judgement": {
+        "body": "=coalesce(action.condition, \"<condition>\")",
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "widget": "IfConditionWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-controlling-conversation-flow",
+      "hidden": [
+        "actions",
+        "elseActions"
+      ],
+      "label": "Branch: If/Else",
+      "subtitle": "If Condition"
+    },
+    "menu": {
+      "label": "Branch: If/else",
+      "submenu": [
+        "Create a condition"
+      ]
+    }
+  },
+  "Microsoft.LogAction": {
+    "form": {
+      "helpLink": "https://aka.ms/composer-telemetry",
+      "label": "Log to console",
+      "subtitle": "Log Action"
+    },
+    "menu": {
+      "label": "Log to console",
+      "submenu": [
+        "Debugging options"
+      ]
+    }
+  },
+  "Microsoft.NumberInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#EEEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": true,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for a number",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Number Input"
+    },
+    "menu": {
+      "label": "Number",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.OAuthInput": {
+    "flow": {
+      "body": {
+        "operation": "Connection",
+        "resource": "=coalesce(action.connectionName, \"?\")",
+        "singleline": true,
+        "widget": "ResourceOperation"
+      },
+      "footer": {
+        "description": "= Token property",
+        "property": "=action.property",
+        "widget": "PropertyDescription"
+      },
+      "hideFooter": "=!action.property",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-oauth",
+      "label": "OAuth login",
+      "order": [
+        "connectionName",
+        "*"
+      ],
+      "subtitle": "OAuth Input"
+    },
+    "menu": [
+      {
+        "label": "OAuth login",
+        "submenu": [
+          "Ask a question"
+        ]
+      },
+      {
+        "label": "OAuth login",
+        "submenu": [
+          "Access external resources"
+        ]
+      }
+    ]
+  },
+  "Microsoft.OnActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Activities",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Activity received"
+    },
+    "trigger": {
+      "label": "Activities (Activity received)",
+      "order": 5.1,
+      "submenu": {
+        "label": "Activities",
+        "placeholder": "Select an activity type",
+        "prompt": "Which activity type?"
+      }
+    }
+  },
+  "Microsoft.OnAssignEntity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Handle a condition when an entity is assigned",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "EntityAssigned activity"
+    }
+  },
+  "Microsoft.OnBeginDialog": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Dialog started",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Begin dialog event"
+    },
+    "trigger": {
+      "label": "Dialog started (Begin dialog event)",
+      "order": 4.1,
+      "submenu": {
+        "label": "Dialog events",
+        "placeholder": "Select an event type",
+        "prompt": "Which event?"
+      }
+    }
+  },
+  "Microsoft.OnCancelDialog": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Dialog cancelled",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Cancel dialog event"
+    },
+    "trigger": {
+      "label": "Dialog cancelled (Cancel dialog event)",
+      "order": 4.2,
+      "submenu": "Dialog events"
+    }
+  },
+  "Microsoft.OnChooseEntity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "order": [
+        "condition",
+        "*"
+      ]
+    }
+  },
+  "Microsoft.OnChooseIntent": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "order": [
+        "condition",
+        "*"
+      ]
+    },
+    "trigger": {
+      "label": "Duplicated intents recognized",
+      "order": 6
+    }
+  },
+  "Microsoft.OnCommandActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Command received",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Command activity received"
+    },
+    "trigger": {
+      "label": "Command received (Command activity received)",
+      "order": 5.81,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnCommandResultActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Command Result received",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Command Result activity received"
+    },
+    "trigger": {
+      "label": "Command Result received (Command Result activity received)",
+      "order": 5.81,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnCondition": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Handle a condition",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Condition"
+    }
+  },
+  "Microsoft.OnContinueConversation": {
+    "form": {
+      "hidden": [
+        "actions"
+      ]
+    },
+    "trigger": {
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnConversationUpdateActivity": {
+    "form": {
+      "description": "Handle the events fired when a user begins a new conversation with the bot.",
+      "helpLink": "https://aka.ms/bf-composer-docs-conversation-update-activity",
+      "hidden": [
+        "actions"
+      ],
+      "label": "Greeting",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "ConversationUpdate activity"
+    },
+    "trigger": {
+      "label": "Greeting (ConversationUpdate activity)",
+      "order": 5.2,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnDialogEvent": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Dialog events",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Dialog event"
+    },
+    "trigger": {
+      "label": "Custom events",
+      "order": 7
+    }
+  },
+  "Microsoft.OnEndOfActions": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Handle a condition when actions have ended",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "EndOfActions activity"
+    }
+  },
+  "Microsoft.OnEndOfConversationActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Conversation ended",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "EndOfConversation activity"
+    },
+    "trigger": {
+      "label": "Conversation ended (EndOfConversation activity)",
+      "order": 5.3,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnError": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Error occurred",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Error event"
+    },
+    "trigger": {
+      "label": "Error occurred (Error event)",
+      "order": 4.3,
+      "submenu": "Dialog events"
+    }
+  },
+  "Microsoft.OnEventActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Event received",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Event activity"
+    },
+    "trigger": {
+      "label": "Event received (Event activity)",
+      "order": 5.4,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnHandoffActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Handover to human",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Handoff activity"
+    },
+    "trigger": {
+      "label": "Handover to human (Handoff activity)",
+      "order": 5.5,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnInstallationUpdateActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Installation updated",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Installation updated activity"
+    }
+  },
+  "Microsoft.OnIntent": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Intent recognized",
+      "order": [
+        "intent",
+        "condition",
+        "entities",
+        "*"
+      ],
+      "subtitle": "Intent recognized"
+    },
+    "trigger": {
+      "label": "Intent recognized",
+      "order": 1
+    }
+  },
+  "Microsoft.OnInvokeActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Conversation invoked",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Invoke activity"
+    },
+    "trigger": {
+      "label": "Conversation invoked (Invoke activity)",
+      "order": 5.6,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnMessageActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Message received",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Message activity received"
+    },
+    "trigger": {
+      "label": "Message received (Message activity received)",
+      "order": 5.81,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnMessageDeleteActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Message deleted",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Message deleted activity"
+    },
+    "trigger": {
+      "label": "Message deleted (Message deleted activity)",
+      "order": 5.82,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnMessageReactionActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Message reaction",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Message reaction activity"
+    },
+    "trigger": {
+      "label": "Message reaction (Message reaction activity)",
+      "order": 5.83,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnMessageUpdateActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Message updated",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Message updated activity"
+    },
+    "trigger": {
+      "label": "Message updated (Message updated activity)",
+      "order": 5.84,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnQnAMatch": {
+    "trigger": {
+      "label": "QnA Intent recognized",
+      "order": 2
+    }
+  },
+  "Microsoft.OnRepromptDialog": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Re-prompt for input",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Reprompt dialog event"
+    },
+    "trigger": {
+      "label": "Re-prompt for input (Reprompt dialog event)",
+      "order": 4.4,
+      "submenu": "Dialog events"
+    }
+  },
+  "Microsoft.OnTypingActivity": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "User is typing",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Typing activity"
+    },
+    "trigger": {
+      "label": "User is typing (Typing activity)",
+      "order": 5.7,
+      "submenu": "Activities"
+    }
+  },
+  "Microsoft.OnUnknownIntent": {
+    "form": {
+      "hidden": [
+        "actions"
+      ],
+      "label": "Unknown intent",
+      "order": [
+        "condition",
+        "*"
+      ],
+      "subtitle": "Unknown intent recognized"
+    },
+    "trigger": {
+      "label": "Unknown intent",
+      "order": 3
+    }
+  },
+  "Microsoft.QnAMakerDialog": {
+    "flow": {
+      "body": "=action.hostname",
+      "widget": "ActionCard"
+    },
+    "menu": {
+      "label": "Connect to QnA Knowledgebase",
+      "submenu": [
+        "Access external resources"
+      ]
+    }
+  },
+  "Microsoft.RegexRecognizer": {
+    "form": {
+      "hidden": [
+        "entities"
+      ]
+    }
+  },
+  "Microsoft.RepeatDialog": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "label": "Repeat this dialog",
+      "order": [
+        "options",
+        "*"
+      ],
+      "subtitle": "Repeat Dialog"
+    },
+    "menu": {
+      "label": "Repeat this dialog",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.ReplaceDialog": {
+    "flow": {
+      "body": {
+        "dialog": "=action.dialog",
+        "widget": "DialogRef"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-understanding-dialogs",
+      "label": "Replace this dialog",
+      "order": [
+        "dialog",
+        "options",
+        "*"
+      ],
+      "subtitle": "Replace Dialog"
+    },
+    "menu": {
+      "label": "Replace this dialog",
+      "submenu": [
+        "Dialog management"
+      ]
+    }
+  },
+  "Microsoft.SendActivity": {
+    "flow": {
+      "body": {
+        "field": "activity",
+        "widget": "LgWidget"
+      },
+      "header": {
+        "colors": {
+          "icon": "#5C2E91",
+          "theme": "#EEEAF4"
+        },
+        "icon": "MessageBot",
+        "widget": "ActionHeader"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-send-activity",
+      "label": "Send a response",
+      "order": [
+        "activity",
+        "*"
+      ],
+      "subtitle": "Send Activity"
+    },
+    "menu": {
+      "label": "Send a response",
+      "submenu": false
+    }
+  },
+  "Microsoft.SendHandoffActivity": {
+    "flow": {
+      "widget": "ActionHeader"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-send-handoff-activity",
+      "label": "Send a handoff request",
+      "subtitle": "Send Handoff Activity"
+    },
+    "menu": {
+      "label": "Send Handoff Event",
+      "submenu": [
+        "Access external resources"
+      ]
+    }
+  },
+  "Microsoft.SetProperties": {
+    "flow": {
+      "body": {
+        "items": "=foreach(action.assignments, x => concat(coalesce(x.property, \"?\"), \" : \", coalesce(x.value, \"?\")))",
+        "widget": "ListOverview"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-memory",
+      "label": "Set properties",
+      "properties": {
+        "assignments": {
+          "properties": {
+            "property": {
+              "intellisenseScopes": [
+                "variable-scopes"
+              ]
+            }
+          }
+        }
+      },
+      "subtitle": "Set Properties"
+    },
+    "menu": {
+      "label": "Set properties",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.SetProperty": {
+    "flow": {
+      "body": "${coalesce(action.property, \"?\")} : ${coalesce(action.value, \"?\")}",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-memory",
+      "label": "Set a property",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Set Property"
+    },
+    "menu": {
+      "label": "Set a property",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "Microsoft.SignOutUser": {
+    "form": {
+      "label": "Sign out user",
+      "subtitle": "Signout User"
+    },
+    "menu": {
+      "label": "Sign out user",
+      "submenu": [
+        "Access external resources"
+      ]
+    }
+  },
+  "Microsoft.SwitchCondition": {
+    "flow": {
+      "judgement": {
+        "body": "=coalesce(action.condition, \"<condition>\")",
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "widget": "SwitchConditionWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-controlling-conversation-flow",
+      "hidden": [
+        "default"
+      ],
+      "label": "Branch: Switch (multiple options)",
+      "properties": {
+        "cases": {
+          "hidden": [
+            "actions"
+          ]
+        },
+        "condition": {
+          "intellisenseScopes": [
+            "user-variables"
+          ]
+        }
+      },
+      "subtitle": "Switch Condition"
+    },
+    "menu": {
+      "label": "Branch: Switch (multiple options)",
+      "submenu": [
+        "Create a condition"
+      ]
+    }
+  },
+  "Microsoft.TelemetryTrackEventAction": {
+    "menu": {
+      "label": "Emit a telemetry track event",
+      "submenu": [
+        "Debugging options"
+      ]
+    }
+  },
+  "Microsoft.TextInput": {
+    "flow": {
+      "body": "=action.prompt",
+      "botAsks": {
+        "body": {
+          "defaultContent": "<prompt>",
+          "field": "prompt",
+          "widget": "LgWidget"
+        },
+        "header": {
+          "colors": {
+            "icon": "#5C2E91",
+            "theme": "#EEEAF4"
+          },
+          "icon": "MessageBot",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "nowrap": true,
+      "userInput": {
+        "header": {
+          "colors": {
+            "icon": "#0078D4",
+            "theme": "#E5F0FF"
+          },
+          "disableSDKTitle": true,
+          "icon": "User",
+          "menu": "none",
+          "widget": "ActionHeader"
+        },
+        "widget": "ActionCard"
+      },
+      "widget": "PromptWidget"
+    },
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for text",
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes"
+          ]
+        }
+      },
+      "subtitle": "Text Input"
+    },
+    "menu": {
+      "label": "Text",
+      "submenu": [
+        "Ask a question"
+      ]
+    }
+  },
+  "Microsoft.ThrowException": {
+    "flow": {
+      "body": {
+        "description": "= ErrorValue",
+        "property": "=coalesce(action.errorValue, \"?\")",
+        "widget": "PropertyDescription"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "label": "Throw an exception",
+      "subtitle": "Throw an exception"
+    },
+    "menu": {
+      "label": "Throw exception",
+      "submenu": [
+        "Debugging options"
+      ]
+    }
+  },
+  "Microsoft.TraceActivity": {
+    "form": {
+      "helpLink": "https://aka.ms/composer-telemetry",
+      "label": "Emit a trace event",
+      "subtitle": "Trace Activity"
+    },
+    "menu": {
+      "label": "Emit a trace event",
+      "submenu": [
+        "Debugging options"
+      ]
+    }
+  },
+  "Microsoft.UpdateActivity": {
+    "flow": {
+      "body": {
+        "field": "activity",
+        "widget": "LgWidget"
+      },
+      "header": {
+        "colors": {
+          "icon": "#656565",
+          "theme": "#D7D7D7"
+        },
+        "icon": "MessageBot",
+        "title": "Update activity",
+        "widget": "ActionHeader"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "label": "Update an activity",
+      "subtitle": "Update Activity"
+    },
+    "menu": {
+      "label": "Update an activity",
+      "submenu": [
+        "Manage properties"
+      ]
+    }
+  },
+  "PromptForTags": {
+    "flow": {
+      "body": "This action will prompt the user for the tags for the link and store them in the \"${action.resultProperty}\" property.",
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#516300"
+        },
+        "icon": "TagSolid",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Properties",
+          "description": "Enter the properties",
+          "defaultExpanded": true,
+          "fields": [
+            "resultProperty",
+            "domainProperty"
+          ]
+        },
+        {
+          "title": "Other",
+          "description": "Other properties",
+          "defaultExpanded": true,
+          "fields": [
+            "*"
+          ]
+        }
+      ]
+    },
+    "menu": {
+      "label": "Get the Link's Tags",
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks": {
+    "form": {
+      "description": "Connects the bot to Shlinks's link shortener service.",
+      "fieldsets": [
+        {
+          "title": "API Connectivity",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "baseUrl"
+          ]
+        },
+        {
+          "title": "Domains",
+          "defaultExpanded": true,
+          "fields": [
+            "defaultDomain",
+            "domains",
+            "defaultTags"
+          ]
+        },
+        {
+          "title": "Permissions",
+          "defaultExpanded": true,
+          "fields": [
+            "linkCreators",
+            "linkAdministrators",
+            "administratorUsername",
+            "unauthorizedMessage"
+          ]
+        }
+      ],
+      "helpLink": "https://developers.Shlinks/",
+      "label": "Shlinks API Configuration",
+      "order": [
+        "*"
+      ]
+    }
+  },
+  "Shlinks.CreateShortLink": {
+    "flow": {
+      "body": {
+        "items": "=[\"Redirects to: \" + coalesce(action.url, \"?\"), \"Tags: \" + if(isArray(action.tags), join(action.tags, \", \"), coalesce(action.tags, \"[tags]\"))]",
+        "widget": "ListOverview"
+      },
+      "header": {
+        "action": {
+          "title": "Create",
+          "type": "Action.Submit"
+        },
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#224a8a"
+        },
+        "icon": "AddLink",
+        "subtitle": "Create a shortlink.",
+        "title": "=\"https://\" + coalesce(action.domain, \"<i>[domain]</i>\") + \"/\" + coalesce(action.slug, \"<i>[slug]</i>\")",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "API Connectivity",
+          "description": "Connectivity properties for the API",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "baseUrl"
+          ]
+        },
+        {
+          "title": "Shortlink",
+          "description": "Information about the shortlink",
+          "defaultExpanded": true,
+          "fields": [
+            "url",
+            "domain",
+            "slug",
+            "tags"
+          ]
+        },
+        {
+          "title": "Other",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [],
+      "pivotFieldsets": false,
+      "properties": {
+        "domain": {
+          "description": "The shortlink domain (must be registered in Shlinks FIRST).",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Domain",
+          "subtitle": "The shortlink domain (must be registered in Shlinks FIRST).",
+          "widget": "textarea"
+        },
+        "slug": {
+          "description": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/<i>slug.</i>\"",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Slug",
+          "subtitle": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/<i>slug.</i>\"",
+          "widget": "textarea"
+        },
+        "tags": {
+          "description": "The \"tags\" for the link, metadata to aid in link organization.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Tags",
+          "subtitle": "The \"tags\" for the link, metadata to aid in link organization.",
+          "widget": "textarea"
+        },
+        "url": {
+          "description": "The URL to which the shortlink will point.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "URL",
+          "subtitle": "The URL to which the shortlink will point.",
+          "widget": "textarea"
+        }
+      },
+      "subtitle": "Create a shortlink using the Shlinks API."
+    },
+    "menu": {
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks.DeleteShortLink": {
+    "flow": {
+      "body": {
+        "items": "=[\"Link: \" + action.linkId]",
+        "widget": "ListOverview"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#224a8a"
+        },
+        "icon": "RemoveLinkChain",
+        "subtitle": "Delete a shortlink.",
+        "title": "Delete a shortlink",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "API Connectivity",
+          "description": "Connectivity properties for the API",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "baseUrl"
+          ]
+        },
+        {
+          "title": "Shortlink",
+          "description": "Information about the shortlink",
+          "defaultExpanded": true,
+          "fields": [
+            "linkId"
+          ]
+        },
+        {
+          "title": "Other",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [],
+      "pivotFieldsets": false,
+      "subtitle": "Delete a shortlink using the Shlinks API."
+    },
+    "menu": {
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks.GetLinkStats": {
+    "flow": {
+      "body": {
+        "items": "=[\"Link: \" + action.linkId, \"Period: \" + action.period, \"Clicks Chart Interval: \" + action.clicksChartInterval]",
+        "widget": "ListOverview"
+      },
+      "footer": {
+        "description": "(link stats)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#000000",
+          "icon": "#000000",
+          "theme": "#ffdd00"
+        },
+        "icon": "NumberSequence",
+        "subtitle": "Get the statistics for a given link",
+        "title": "Get Link Stats",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": false,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "API Key & Result",
+          "description": "Connectivity and result properties for the API",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "resultProperty",
+            "baseUrl"
+          ]
+        },
+        {
+          "title": "Other Options",
+          "description": "Other options for the API",
+          "defaultExpanded": true,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [],
+      "pivotFieldsets": false,
+      "subtitle": "Returns detailed statistics for link in given period."
+    },
+    "menu": {
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks.GetMyLinks": {
+    "flow": {
+      "body": {
+        "description": "(the links)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#000000",
+          "icon": "#000000",
+          "theme": "#f2bdf0"
+        },
+        "icon": "LinkedDatabase",
+        "subtitle": "Get the links created by the currently logged-in user or all users if the user is a link administrator.",
+        "title": "Get My Links for ${action.domain}",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "API Key & Result",
+          "description": "Connectivity and result properties for the API",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "domain",
+            "resultProperty",
+            "baseUrl",
+            "fullResponse"
+          ]
+        },
+        {
+          "title": "Other",
+          "description": "Other properties",
+          "defaultExpanded": true,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [],
+      "pivotFieldsets": false,
+      "subtitle": "Retrieve the user's shortlinks or all shortlinks if the user is a link administrator."
+    },
+    "menu": {
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks.ListDomains": {
+    "flow": {
+      "body": {
+        "description": "(the domains)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "action": {
+          "title": "Create",
+          "type": "Action.Submit"
+        },
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#5c020e"
+        },
+        "icon": "PageListSolid",
+        "subtitle": "List all domains registered.",
+        "title": "List Domains",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Required Properties",
+          "description": "Required properties for this action.",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "baseUrl",
+            "resultProperty"
+          ]
+        },
+        {
+          "title": "Other",
+          "defaultExpanded": true,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [],
+      "pivotFieldsets": false,
+      "subtitle": "Create a shortlink using the Shlinks API."
+    },
+    "menu": {
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks.SelectLink": {
+    "flow": {
+      "body": {
+        "defaultContent": "<prompt>",
+        "field": "prompt",
+        "widget": "LgWidget"
+      },
+      "footer": {
+        "description": "= (selected link)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "icon": "#5C2E91",
+          "theme": "#BBEAF4"
+        },
+        "disableSDKTitle": true,
+        "icon": "LinkedDatabase",
+        "menu": "none",
+        "title": "Select a Link",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": "=!action.property",
+      "widget": "ActionCard"
+    },
+    "form": {
+      "hidden": [
+        "defaultLocale",
+        "allowInterruptions",
+        "defaultValue",
+        "maxTurnCount",
+        "validations",
+        "defaultValueResponse"
+      ],
+      "label": "Select a Link",
+      "order": [
+        "apiKey",
+        "domain",
+        "baseUrl",
+        "property",
+        "prompt",
+        "*"
+      ],
+      "properties": {
+        "property": {
+          "intellisenseScopes": [
+            "variable-scopes",
+            "expressions",
+            "user-variables"
+          ]
+        },
+        "resultProperty": {
+          "description": "Property to store the selected link",
+          "intellisenseScopes": [
+            "variable-scopes",
+            "expressions",
+            "user-variables"
+          ]
+        }
+      },
+      "subtitle": "Present the user with a list of links for him to select from"
+    },
+    "menu": {
+      "label": "Select a Link",
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Shlinks.UpdateShortlink": {
+    "flow": {
+      "body": {
+        "items": "=[\"Redirects to: \" + coalesce(action.url, \"?\"), \"Tags: \" + if(isArray(action.tags), join(action.tags, \", \"), coalesce(action.tags, \"[tags]\"))]",
+        "widget": "ListOverview"
+      },
+      "header": {
+        "action": {
+          "title": "Create",
+          "type": "Action.Submit"
+        },
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#224a8a"
+        },
+        "icon": "AddLink",
+        "subtitle": "Create a shortlink.",
+        "title": "=\"https://\" + coalesce(action.domain, \"<i>[domain]</i>\") + \"/\" + coalesce(action.slug, \"<i>[slug]</i>\")",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "API Connectivity",
+          "description": "Connectivity properties for the API",
+          "defaultExpanded": true,
+          "fields": [
+            "apiKey",
+            "baseUrl"
+          ]
+        },
+        {
+          "title": "Shortlink",
+          "description": "Information about the shortlink",
+          "defaultExpanded": true,
+          "fields": [
+            "linkId",
+            "url",
+            "domain",
+            "slug",
+            "tags"
+          ]
+        },
+        {
+          "title": "Other",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [],
+      "pivotFieldsets": false,
+      "properties": {
+        "domain": {
+          "description": "The shortlink domain (must be registered in Shlinks FIRST).",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Domain",
+          "subtitle": "The shortlink domain (must be registered in Shlinks FIRST).",
+          "widget": "textarea"
+        },
+        "slug": {
+          "description": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/<i>slug.</i>\"",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Slug",
+          "subtitle": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/<i>slug.</i>\"",
+          "widget": "textarea"
+        },
+        "tags": {
+          "description": "The \"tags\" for the link, metadata to aid in link organization.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Tags",
+          "subtitle": "The \"tags\" for the link, metadata to aid in link organization.",
+          "widget": "textarea"
+        },
+        "url": {
+          "description": "The URL to which the shortlink will point.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "URL",
+          "subtitle": "The URL to which the shortlink will point.",
+          "widget": "textarea"
+        }
+      },
+      "subtitle": "Update a shortlink using the Shlinks API."
+    },
+    "menu": {
+      "submenu": [
+        "Shlinks"
+      ]
+    }
+  },
+  "Telegram.Bot": {
+    "form": {
+      "description": "Connects the bot to Telegram for backchannel messaging.",
+      "fieldsets": [
+        {
+          "title": "Connection",
+          "defaultExpanded": true,
+          "fields": [
+            {
+              "type": "Input.Text",
+              "id": "Token",
+              "label": "Bot Token"
+            },
+            {
+              "type": "Input.Text",
+              "id": "RecipientId",
+              "label": "Administrative Recipient ID"
+            }
+          ]
+        },
+        {
+          "title": "Transcribe to Telegram",
+          "defaultExpanded": false,
+          "fields": [
+            {
+              "type": "Input.Toggle",
+              "id": "ForwardMessages",
+              "label": "Transcribe to Telegram"
+            },
+            {
+              "type": "Input.Text",
+              "id": "TranscriptGroupId",
+              "label": "Transcript Group ID",
+              "placeholder": "123456789"
+            }
+          ]
+        },
+        {
+          "title": "The Rest",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "helpLink": "https://docs.dgmjr.io",
+      "intellisenseScopes": [
+        "expressions",
+        "user-variables"
+      ],
+      "label": "Telegram Bot Configuration",
+      "properties": {
+        "ForwardMessages": {
+          "description": "Transcribe messages to Telegram.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Transcribe to Telegram",
+          "subtitle": "Transcribe messages to Telegram.",
+          "widget": "checkbox"
+        },
+        "Letter2CustomEmojiMap": {
+          "description": "A map of letters to custom emoji.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Letter to Custom Emoji Map",
+          "subtitle": "A map of letters to custom emoji."
+        },
+        "RecipientId": {
+          "description": "The recipient ID for the administrative user.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Recipient ID",
+          "subtitle": "The recipient ID for the administrative user.",
+          "widget": "textarea"
+        },
+        "Token": {
+          "description": "The token for the Telegram bot.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Bot Token",
+          "subtitle": "The token for the Telegram bot.",
+          "widget": "textarea"
+        },
+        "TranscriptGroupId": {
+          "description": "The group ID for the transcript.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Transcript Group ID",
+          "subtitle": "The group ID for the transcript.",
+          "widget": "textarea"
+        }
+      },
+      "subtitle": "Connects the bot to Telegram for backchannel messaging.",
+      "widget": "textarea"
+    }
+  },
+  "Telegram.CreateForumTopic": {
+    "flow": {
+      "body": {
+        "items": "=[\"Group chat ID: \" + coalesce(action.recipientId, \"?\"), \"Icon Color: \" + coalesce(action.iconColor, \"?\"), \"\nIcon: \" + coalesce(action.customEmojiIcon, \"?\")]",
+        "widget": "ListOverview"
+      },
+      "footer": {
+        "description": "(the created forum topic)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "action": {
+          "title": "Create",
+          "type": "Action.Submit"
+        },
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#992299"
+        },
+        "icon": "OfficeChatSolid",
+        "subtitle": "Create a forum topic in a group chat.",
+        "title": "=\"New topic: \\\"\" + coalesce(action.title, \"Create a Forum Topic\") + \"\\\"\"",
+        "widget": "ActionHeader"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Bot API Token",
+          "description": "Enter the bot token.",
+          "defaultExpanded": false,
+          "fields": [
+            "botApiToken"
+          ]
+        },
+        {
+          "title": "Group Chat Info",
+          "defaultExpanded": true,
+          "fields": [
+            "recipientId",
+            "title",
+            "customEmojiIcon",
+            "iconColor"
+          ]
+        },
+        {
+          "title": "Miscellaneous",
+          "description": "Other stuff.",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [
+        "parseMode",
+        "replyToMessageId",
+        "protectContent"
+      ],
+      "pivotFieldsets": true,
+      "properties": {
+        "recipientId": {
+          "description": "The ID of the chat to forward the message to.",
+          "intellisenseScopes": [
+            "expressions",
+            "user-variables"
+          ],
+          "label": "Group Chat ID",
+          "subtitle": "The ID of the chat to forward the message to.",
+          "widget": "textarea"
+        }
+      },
+      "subtitle": "Forward a message to another chat.",
+      "widget": "textarea"
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.ForwardMessage": {
+    "flow": {
+      "action": {
+        "type": "Action.Submit"
+      },
+      "body": {
+        "items": "=[\"From chat: \" + coalesce(action.fromChatId, \"?\"), \"Message: \" + coalesce(action.messageId, \"?\"), \"To: \" + coalesce(action.recipientId, \"?\")]",
+        "widget": "ListOverview"
+      },
+      "footer": {
+        "description": "(the forwarded message)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#079145"
+        },
+        "icon": "MailForward",
+        "title": "Forward a Message",
+        "widget": "ActionHeader"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Bot API Token",
+          "description": "Enter the bot token.",
+          "defaultExpanded": false,
+          "fields": [
+            "botApiToken"
+          ]
+        },
+        {
+          "title": "Message",
+          "description": "Enter the message's information.",
+          "defaultExpanded": true,
+          "fields": [
+            "messageId",
+            "fromChatId",
+            "recipientId",
+            "replyToMessageId"
+          ]
+        },
+        {
+          "title": "Miscellaneous",
+          "description": "Other stuff.",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "subtitle": "Forward a message to another chat.",
+      "widget": "textarea"
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.GetMyCommands": {
+    "flow": {
+      "body": {
+        "items": "=['Scope Type: ' + coalesce(action.scopeType, 'null'), 'Chat ID: ' + coalesce(action.chatId, '?'), 'User ID: ' + coalesce(action.userId, '?')]",
+        "widget": "ListOverview"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#52233a"
+        },
+        "description": "Gets the bot's available commands.",
+        "disableSDKTitle": true,
+        "icon": "CommandPrompt",
+        "title": "Get The Bot's Commands",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Required Properties",
+          "description": "Enter the required properties.",
+          "defaultExpanded": true,
+          "fields": [
+            "botApiToken",
+            "resultProperty",
+            "scopeType",
+            "chatId",
+            "userId"
+          ]
+        },
+        {
+          "title": "Other",
+          "description": "Other options.",
+          "defaultExpanded": true,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [
+        "recipientId",
+        "parseMode",
+        "disableNotification",
+        "protectContent",
+        "replyToMessageId"
+      ]
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.GetUser": {
+    "flow": {
+      "body": "User: ${coalesce(action.recipientId, \"?\")}",
+      "footer": {
+        "description": "(the user object)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#1d0691"
+        },
+        "description": "Get User ${coalesce(action.recipientId, \"?\")}",
+        "icon": "UserOptional",
+        "overrideSDKHeader": true,
+        "subtitle": "Get a user by ID.",
+        "title": "Get User",
+        "widget": "ActionHeader"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "hidden": [
+        "parseMode",
+        "disableNotification",
+        "replyToMessageId",
+        "protectContent"
+      ],
+      "properties": {
+        "recipientId": {
+          "description": "The ID of the user to get.",
+          "label": "User ID"
+        }
+      }
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.HelpIntentRecognizer": {
+    "form": {
+      "hidden": [
+        "entities"
+      ]
+    }
+  },
+  "Telegram.SendFile": {
+    "form": {
+      "intellisenseScopes": [
+        "expressions",
+        "user-variables"
+      ],
+      "properties": {
+        "caption": {
+          "description": "The caption to be displayed below the image.",
+          "widget": "textarea"
+        }
+      }
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.SendImage": {
+    "form": {
+      "intellisenseScopes": [
+        "expressions",
+        "user-variables"
+      ],
+      "properties": {
+        "caption": {
+          "description": "The caption to be displayed below the image.",
+          "widget": "textarea"
+        }
+      }
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.SendTextMessage": {
+    "flow": {
+      "body": {
+        "items": "=[\"recipient: \" + coalesce(action.recipientId, \"?\"), \"message: \" + coalesce(action.text, \"?\")]",
+        "widget": "ListOverview"
+      },
+      "footer": {
+        "actions": [
+          {
+            "type": "Action.Submit",
+            "title": "Send",
+            "isPrimary": true
+          }
+        ],
+        "description": "(the sent message)",
+        "property": "=action.resultProperty",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#ab0d02"
+        },
+        "description": "Send a text message to a user.",
+        "icon": "Send",
+        "title": "Send Text Message",
+        "widget": "ActionHeader"
+      },
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Bot API Token",
+          "description": "Enter the bot token.",
+          "defaultExpanded": false,
+          "fields": [
+            "botApiToken"
+          ]
+        },
+        {
+          "multiline": true,
+          "title": "Message",
+          "description": "Enter the message to send.",
+          "defaultExpanded": true,
+          "fields": [
+            "text",
+            "recipientId",
+            "replyToMessageId",
+            "protectContent",
+            "disableNotification",
+            "parseMode"
+          ],
+          "intellisenseScopes": [
+            "variable-scopes",
+            "expressions",
+            "user-variables"
+          ]
+        },
+        {
+          "title": "Output",
+          "description": "The output of the action.",
+          "defaultExpanded": false,
+          "fields": [
+            "disabled",
+            "output",
+            "*"
+          ]
+        }
+      ]
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.SendVideo": {
+    "flow": {
+      "body": {
+        "description": "(video)",
+        "property": "=action.video",
+        "widget": "PropertyDescription"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#070140"
+        },
+        "description": "Send a video to a user.",
+        "icon": "MSNVideosSolid",
+        "title": "Send a video",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "intellisenseScopes": [
+        "expressions",
+        "user-variables"
+      ],
+      "properties": {
+        "caption": {
+          "description": "The caption to be displayed below the image.",
+          "widget": "textarea"
+        }
+      }
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  },
+  "Telegram.SetMyCommands": {
+    "flow": {
+      "body": {
+        "items": "=foreach(action.commmands, cmd => `${cmd.command}  -  ${cmd.description}`)",
+        "widget": "ListOverview"
+      },
+      "header": {
+        "colors": {
+          "color": "#FFFFFF",
+          "icon": "#FFFFFF",
+          "theme": "#fc1703"
+        },
+        "description": "Sets the bot's available commands.",
+        "disableSDKTitle": true,
+        "icon": "CommandPrompt",
+        "title": "Set The Bot's Commands",
+        "widget": "ActionHeader"
+      },
+      "hideFooter": true,
+      "widget": "ActionCard"
+    },
+    "form": {
+      "fieldsets": [
+        {
+          "title": "Bot API Token",
+          "description": "Enter the bot token.",
+          "defaultExpanded": false,
+          "fields": [
+            "botApiToken"
+          ]
+        },
+        {
+          "multiline": true,
+          "title": "Commands",
+          "description": "The bot's commands.",
+          "defaultExpanded": true,
+          "fields": [
+            "scopeType",
+            "commands"
+          ],
+          "intellisenseScopes": [
+            "variable-scopes",
+            "expressions",
+            "user-variables"
+          ]
+        },
+        {
+          "title": "Chat Info",
+          "description": "The chat info.",
+          "defaultExpanded": false,
+          "fields": [
+            "chatId",
+            "userId"
+          ],
+          "intellisenseScopes": [
+            "variable-scopes",
+            "expressions",
+            "user-variables"
+          ]
+        },
+        {
+          "title": "Other",
+          "description": "Other options.",
+          "defaultExpanded": false,
+          "fields": [
+            "*"
+          ]
+        }
+      ],
+      "hidden": [
+        "recipientId",
+        "parseMode",
+        "disableNotification",
+        "protectContent",
+        "replyToMessageId"
+      ]
+    },
+    "menu": {
+      "submenu": [
+        "Telegram"
+      ]
+    }
+  }
+}

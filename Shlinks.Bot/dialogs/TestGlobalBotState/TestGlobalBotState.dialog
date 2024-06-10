@@ -1,0 +1,44 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "G1KuQI",
+    "name": "TestGlobalBotState",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "YcoGR3"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "SgKZZS"
+          },
+          "assignments": [
+            {
+              "property": "global.foo",
+              "value": "bar"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "tNSa3j"
+          },
+          "activity": "${SendActivity_tNSa3j()}"
+        }
+      ]
+    }
+  ],
+  "generator": "TestGlobalBotState.lg",
+  "recognizer": "TestGlobalBotState.lu.qna",
+  "id": "TestGlobalBotState"
+}

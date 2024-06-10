@@ -1,0 +1,107 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "menu": {
+    "submenu": [
+      "Shlinks"
+    ]
+  },
+  "form": {
+    "hidden": [],
+    "subtitle": "Create a shortlink using the Shlinks API.",
+    "fieldsets": [
+      {
+        "title": "API Connectivity",
+        "description": "Connectivity properties for the API",
+        "defaultExpanded": true,
+        "fields": [
+          "apiKey",
+          "baseUrl"
+        ]
+      },
+      {
+        "title": "Shortlink",
+        "description": "Information about the shortlink",
+        "defaultExpanded": true,
+        "fields": [
+          "url",
+          "domain",
+          "slug",
+          "tags"
+        ]
+      },
+      {
+        "title": "Other",
+        "defaultExpanded": false,
+        "fields": [
+          "*"
+        ]
+      }
+    ],
+    "properties": {
+      "url": {
+        "description": "The URL to which the shortlink will point.",
+        "subtitle": "The URL to which the shortlink will point.",
+        "widget": "textarea",
+        "label": "URL",
+        "intellisenseScopes": [
+          "expressions",
+          "user-variables"
+        ]
+      },
+      "domain": {
+        "description": "The shortlink domain (must be registered in Shlinks FIRST).",
+        "subtitle": "The shortlink domain (must be registered in Shlinks FIRST).",
+        "widget": "textarea",
+        "label": "Domain",
+        "intellisenseScopes": [
+          "expressions",
+          "user-variables"
+        ]
+      },
+      "slug": {
+        "description": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/<i>slug.</i>\"",
+        "subtitle": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/<i>slug.</i>\"",
+        "widget": "textarea",
+        "label": "Slug",
+        "intellisenseScopes": [
+          "expressions",
+          "user-variables"
+        ]
+      },
+      "tags": {
+        "description": "The \"tags\" for the link, metadata to aid in link organization.",
+        "subtitle": "The \"tags\" for the link, metadata to aid in link organization.",
+        "widget": "textarea",
+        "label": "Tags",
+        "intellisenseScopes": [
+          "expressions",
+          "user-variables"
+        ]
+      }
+    },
+    "pivotFieldsets": false
+  },
+  "flow": {
+    "widget": "ActionCard",
+    "header": {
+      "widget": "ActionHeader",
+      "title": "=\"https://\" + coalesce(action.domain, \"<i>[domain]</i>\") + \"/\" + coalesce(action.slug, \"<i>[slug]</i>\")",
+      "icon": "AddLink",
+      "subtitle": "Create a shortlink.",
+      "action": {
+        "type": "Action.Submit",
+        "title": "Create"
+      },
+      "colors": {
+        "theme": "#224a8a",
+        "color": "#FFFFFF",
+        "icon": "#FFFFFF"
+      }
+    },
+    "body": {
+      "widget": "ListOverview",
+      "items": "=[\"Redirects to: \" + coalesce(action.url, \"?\"), \"Tags: \" + if(isArray(action.tags), join(action.tags, \", \"), coalesce(action.tags, \"[tags]\"))]"
+    },
+    "hideFooter": true
+  }
+}

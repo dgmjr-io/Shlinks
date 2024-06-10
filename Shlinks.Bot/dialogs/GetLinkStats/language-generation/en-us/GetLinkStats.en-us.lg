@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# Shlinks.SelectLink_UnrecognizedPrompt_6BKraf()
+[Activity
+    Text = ${Shlinks.SelectLink_UnrecognizedPrompt_6BKraf_text()}
+]
+
+# Shlinks.SelectLink_UnrecognizedPrompt_6BKraf_text()
+- You knucklehead! That wasn't one of the options!
+# Shlinks.SelectLink_Prompt_6BKraf()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_6BKraf_text()}
+]
+
+# Shlinks.SelectLink_Prompt_6BKraf_text()
+- Select a link:

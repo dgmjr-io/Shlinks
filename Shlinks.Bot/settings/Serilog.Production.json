@@ -1,0 +1,12 @@
+{
+  "$schema": "https://gist.cdn13.net/serilog.schema",
+  "MinimumLevel": {
+    "Default": "Verbose",
+    "Override": {
+      "Microsoft": "Verbose",
+      "Microsoft.AspNetCore.Authentication": "Verbose",
+      "Microsoft.Hosting.Lifetime": "Verbose",
+      "System": "Verbose"
+    }
+  }
+}

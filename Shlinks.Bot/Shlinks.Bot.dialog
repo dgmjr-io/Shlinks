@@ -1,0 +1,577 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "name": "Shlinks.Bot",
+    "description": "",
+    "id": "A79tBe"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720",
+        "comment": "This trigger runs when a conversation update activity is sent to the bot. This indicates a user or bot being added or removed from a conversation."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "z2QDrI"
+          },
+          "handledProperty": "turn.eventHandled",
+          "eventName": "recognizedIntent",
+          "eventValue": "Start"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "mb2n1u",
+        "comment": "This trigger fires when an incoming activity is not handled by any other trigger."
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "kMjqz1",
+            "comment": "It is recommended to show a message to the user when the bot does not know how to handle an incoming activity and provide follow up options or a help message."
+          },
+          "activity": "${SendDidNotUnderstand()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "42vDfd"
+          },
+          "activityProcessed": true,
+          "dialog": "HelpDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "JmCoPx",
+        "name": "RequestHelp"
+      },
+      "intent": "RequestHelp",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "8oYKBN"
+          },
+          "activityProcessed": true,
+          "dialog": "HelpDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "yvfsIX",
+        "name": "RequestCancellation"
+      },
+      "intent": "RequestCancellation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "bEHm94"
+          },
+          "activityProcessed": true,
+          "dialog": "CancelDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "p02wVf",
+        "name": "NewLink"
+      },
+      "intent": "NewLink",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "QR3uQy"
+          },
+          "activityProcessed": true,
+          "dialog": "NewLink"
+        }
+      ],
+      "entities": []
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "gTVtxE",
+        "name": "Test"
+      },
+      "intent": "Test",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ldt70E"
+          },
+          "activityProcessed": true,
+          "dialog": "Test"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "ZBTTsU"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "V7yEFg"
+          },
+          "activity": "${SendActivity_V7yEFg()}"
+        },
+        {
+          "$kind": "Shlinks.CreateShortLink",
+          "$designer": {
+            "id": "WcXwzH"
+          },
+          "resultProperty": "dialog.result",
+          "url": "https://google.com",
+          "domain": "moc.markets",
+          "slug": "google",
+          "tags": [
+            "markets",
+            "google"
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "kBPY6B"
+          }
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "3IAE0B"
+          },
+          "assignments": [
+            {
+              "property": "dialog.urls",
+              "value": [
+                "https://moc.markets",
+                "https://www.google.com",
+                "https://fo.com",
+                "foo",
+                "foo.com",
+                "google.foo"
+              ]
+            },
+            {
+              "property": "dialog.urlObjects",
+              "value": []
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "BiEp66"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.urls",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "uU5X9p"
+              },
+              "assignments": [
+                {
+                  "property": "dialog.foreach.item",
+                  "value": {
+                    "url": ""
+                  }
+                },
+                {
+                  "property": "dialog.foreach.item.url",
+                  "value": "=dialog.foreach.value"
+                },
+                {
+                  "property": "dialog.foreach.item.IsValidIUrl",
+                  "value": "=strings.isvalidurl(dialog.foreach.value)"
+                },
+                {
+                  "property": "dialog.foreach.item.isNullOrEmpty",
+                  "value": "=str.isNullOrEmpty(dialog.foreach.value)"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "uOiLZj"
+              },
+              "activity": "${SendActivity_uOiLZj()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "CYH6Ad"
+          },
+          "activity": "${SendActivity_CYH6Ad()}"
+        },
+        {
+          "$kind": "Shlinks.CreateShortLink",
+          "$designer": {
+            "id": "zGilfi"
+          },
+          "resultProperty": "dialog.result",
+          "url": "https://google.com",
+          "domain": "moc.markets",
+          "slug": "google",
+          "tags": [
+            "markets",
+            "google"
+          ]
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "UCkohR",
+        "name": "ListDomains"
+      },
+      "intent": "ListDomains",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "CQE77R"
+          },
+          "activityProcessed": true,
+          "dialog": "ListDomains"
+        }
+      ],
+      "entities": []
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "1VmJXx",
+        "name": "GetProperty"
+      },
+      "intent": "GetProperty",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "Hum9nr"
+          },
+          "property": "dialog.property",
+          "value": "=getValue(turn.recognized.entities.property[0])"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "vwL4Ro"
+          },
+          "activity": "${SendActivity_vwL4Ro()}"
+        }
+      ],
+      "entities": [
+        "property"
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "lVS9Yq",
+        "name": "SetDomain"
+      },
+      "intent": "SetDomain",
+      "entities": [
+        "domain"
+      ],
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "CKTbam"
+          },
+          "condition": "=!empty(@domain)",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "Orz7oS"
+              },
+              "condition": "=contains(settings[\"Shlinks\"].domains, @domain)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "p2lhZM"
+                  },
+                  "property": "conversation.link.domain",
+                  "value": "=@domain"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "9azddE"
+                  },
+                  "activity": "${SendActivity_9azddE()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "WidhDd"
+                  },
+                  "activity": "${SendActivity_WidhDd()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "DydpfM"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ListDomains"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "4M5F0C"
+              },
+              "activityProcessed": true,
+              "dialog": "ListDomains"
+            }
+          ]
+        }
+      ],
+      "condition": "=!empty(@domain)"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "MHNS09",
+        "name": "GetTags"
+      },
+      "intent": "GetTags",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "0ORPvM"
+          },
+          "activityProcessed": true,
+          "dialog": "EnsureInitilalized"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "PaeQOo"
+          },
+          "activityProcessed": true,
+          "dialog": "AddTags"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "yF1YWR",
+        "name": "MyLinks"
+      },
+      "intent": "MyLinks",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "QUNSTo"
+          },
+          "activityProcessed": true,
+          "dialog": "GetMyLinks"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "BE1qS4",
+        "name": "DeleteLink"
+      },
+      "intent": "DeleteLink",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "B0BLge"
+          },
+          "activityProcessed": true,
+          "dialog": "DeleteLink",
+          "options": {}
+        }
+      ],
+      "entities": []
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "i7i8tr",
+        "name": "Start"
+      },
+      "intent": "Start",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "8D2ygw"
+          },
+          "activity": "${SendWelcome()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ygWUB6"
+          },
+          "activityProcessed": true,
+          "dialog": "HelpDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "QwFd5m",
+        "name": "LinkStats"
+      },
+      "intent": "LinkStats",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "VXozKA"
+          },
+          "activityProcessed": true,
+          "dialog": "GetLinkStats"
+        }
+      ],
+      "entities": []
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "nHYE8I",
+        "name": "Debug"
+      },
+      "intent": "Debug",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "5LcSCd"
+          },
+          "activityProcessed": true,
+          "dialog": "Debug"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Q0npUM",
+        "name": "EditLink"
+      },
+      "intent": "EditLink",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "43Yp4W"
+          },
+          "activityProcessed": true,
+          "dialog": "EditLink"
+        }
+      ]
+    }
+  ],
+  "generator": "Shlinks.Bot.lg",
+  "id": "Shlinks.Bot",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "RequestHelp",
+        "pattern": "/help"
+      },
+      {
+        "intent": "RequestCancellation",
+        "pattern": "/cancel"
+      },
+      {
+        "intent": "NewLink",
+        "pattern": "/newlink"
+      },
+      {
+        "intent": "Test",
+        "pattern": "^/test$"
+      },
+      {
+        "intent": "ListDomains",
+        "pattern": "/domain(?:s?)?"
+      },
+      {
+        "intent": "GetProperty",
+        "pattern": "/get\\s*(?<property>[^\\s]+)"
+      },
+      {
+        "intent": "SetDomain",
+        "pattern": "/domain\\s*?(?<domain>[^\\s]+)?"
+      },
+      {
+        "intent": "GetTags",
+        "pattern": "/tags"
+      },
+      {
+        "intent": "MyLinks",
+        "pattern": "/list"
+      },
+      {
+        "intent": "DeleteLink",
+        "pattern": "/del"
+      },
+      {
+        "intent": "Start",
+        "pattern": "/start"
+      },
+      {
+        "intent": "LinkStats",
+        "pattern": "/stats"
+      },
+      {
+        "intent": "Debug",
+        "pattern": "/debug"
+      },
+      {
+        "intent": "EditLink",
+        "pattern": "/edit"
+      }
+    ]
+  }
+}

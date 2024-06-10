@@ -1,0 +1,63 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ov1WPb",
+    "name": "ChangeUrl",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "b3M6bp"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "2Em2Kj"
+          },
+          "value": "ChangeUrl"
+        },
+        {
+          "$kind": "BotBuilderCommunity.InternetProtocolInput",
+          "$designer": {
+            "id": "SXGiPp"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "prompt": "${BotBuilderCommunityInternetProtocolInput_Prompt_SXGiPp()}",
+          "invalidPrompt": "${BotBuilderCommunityInternetProtocolInput_InvalidPrompt_SXGiPp()}",
+          "ProtocolType": "Url",
+          "resultProperty": "conversation.link.url",
+          "validations": [
+            "=strings.isvalidurl(this.value)"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Yh8F8i"
+          },
+          "activity": "${SendActivity_Yh8F8i()}"
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "G4ndUv"
+          },
+          "resultProperty": "turn.poppedValue"
+        }
+      ]
+    }
+  ],
+  "generator": "ChangeUrl.lg",
+  "recognizer": "ChangeUrl.lu.qna",
+  "id": "ChangeUrl"
+}

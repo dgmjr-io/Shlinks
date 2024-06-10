@@ -1,0 +1,107 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "x7Jd0q",
+    "name": "RemoveTag",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "SeeRjb"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "LmSVIw"
+          },
+          "property": "dialog.choices",
+          "value": "=conversation.link.tags"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "WaYGOh"
+          },
+          "condition": "=count(dialog.choices) > 0",
+          "actions": [
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "GUQNi1"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${ChoiceInput_Prompt_GUQNi1()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or "
+              },
+              "property": "dialog.input",
+              "style": "suggestedAction",
+              "choices": "=dialog.choices"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "52NtCS"
+              },
+              "condition": "=dialog.input == \"/cancel\"",
+              "actions": [],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.EditArray",
+                  "$designer": {
+                    "id": "0uz0EG"
+                  },
+                  "changeType": "remove",
+                  "itemsProperty": "conversation.link.tags",
+                  "value": "=dialog.input"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "hwH66q"
+              },
+              "activity": "${SendActivity_hwH66q()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Yi2nRC"
+          },
+          "activityProcessed": true,
+          "dialog": "AddTags"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "lSRXla"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "RemoveTag.lg",
+  "recognizer": "RemoveTag.lu.qna",
+  "id": "RemoveTag"
+}

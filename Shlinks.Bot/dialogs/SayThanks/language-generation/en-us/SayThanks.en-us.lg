@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# SendActivity_ciWZ0c()
+[Activity
+    Text = ${SendActivity_ciWZ0c_text()}
+]
+
+# SendActivity_ciWZ0c_text()
+- ```Thanks for using the ${settings["Dgmjr.AboutThisBot"].botName}!
+
+
+If you need to make any more shortlinks, just send /start again.    
+
+
+I'm here 24/7.  I'm just a computer program after all.  🙃```

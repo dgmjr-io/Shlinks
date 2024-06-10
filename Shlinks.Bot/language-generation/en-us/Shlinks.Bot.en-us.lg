@@ -1,0 +1,118 @@
+[import](common.lg)
+
+# SendGreeting()
+[Activity
+    Text = ${Greeting()}
+]
+
+# Greeting()
+- Welcome, ${user.telegram.username} to the ${settings.AboutThisBot.BotName}!
+# SendDidNotUnderstand()
+[Activity
+    Text = ${DidNotUnderstand()}
+]
+
+# DidNotUnderstand()
+- Huh?  Bro, you need to respond to the questions I ask you when I ask them.
+# SendActivity_KmcMBZ()
+[Activity
+    Text = ${SendActivity_KmcMBZ_text()}
+]
+
+# SendActivity_KmcMBZ_text()
+- moc.markets.url
+# SendActivity_vg71LG()
+[Activity
+    Text = ${SendActivity_vg71LG_text()}
+]
+
+# SendActivity_vg71LG_text()
+- {} = ${dialog.urlObjects[count(dialog.urlObjects) - 1]}
+# SendActivity_CYH6Ad()
+[Activity
+    Text = ${SendActivity_CYH6Ad_text()}
+]
+
+# SendActivity_CYH6Ad_text()
+- dialog.urlObjects: ${dialog.urlObjects}
+# SendActivity_uOiLZj()
+[Activity
+    Text = ${SendActivity_uOiLZj_text()}
+]
+
+# SendActivity_uOiLZj_text()
+- dialog.foreach.item: ${dialog.foreach.item}
+
+# SendActivity_vwL4Ro()
+[Activity
+    Text = ${SendActivity_vwL4Ro_text()}
+]
+
+# SendActivity_vwL4Ro_text()
+- ${turn.recoginzed.entities.property[0]} = ${dialog.property}
+# SendActivity_11kTmZ()
+[Activity
+    Text = ${SendActivity_11kTmZ_text()}
+]
+
+# SendActivity_11kTmZ_text()
+- Great! I'll use the domain "${conversation.link.domain}" from now on.
+- Cool, I'll use the domain "${conversation.link.domain}" from now on.
+- Ok, you're now creating links in the  "${conversation.link.domain}" domain.
+# SendActivity_9azddE()
+[Activity
+    Text = ${SendActivity_9azddE_text()}
+]
+
+# SendActivity_9azddE_text()
+- Cool, I'll use the domain "${conversation.link.domain}" from now on.
+- Ok, I'll use the domain "${conversation.link.domain}" from now on.
+- Great! I'll use the domain "${conversation.link.domain}" from now on.
+- Ok, you're now creating links in the  "${conversation.link.domain}" domain.
+- Cool, you're now creating links in the  "${conversation.link.domain}" domain.
+- Great! You're now creating links in the  "${conversation.link.domain}" domain.
+# SendActivity_WidhDd()
+[Activity
+    Text = ${SendActivity_WidhDd_text()}
+]
+
+# SendActivity_WidhDd_text()
+- Sorry, Bro..."${@domain}" isn't a valid domain.
+# SendActivity_dRJXES()
+[Activity
+    Text = ${SendActivity_dRJXES_text()}
+]
+
+# SendActivity_dRJXES_text()
+- link: ${jsonStringify(dialog.result)}
+# SendActivity_V7yEFg()
+[Activity
+    Text = ${SendActivity_V7yEFg_text()}
+]
+
+# SendActivity_V7yEFg_text()
+- ```strings.isvalidurl("https://google.com") = ${strings.isvalidurl("https://google.com")} = true
+
+strings.isvalidurl("fuckmeintheass") = ${strings.isvalidurl("fuckmeintheass")} = false```
+# SendActivity_doXBhW()
+[Activity
+    Text = ${SendActivity_doXBhW_text()}
+]
+
+# SendActivity_doXBhW_text()
+- turn.recognized.entities: ${jsonStringify(turn.recognized.entities.slug[0])}
+# SendActivity_H8gQFl()
+[Activity
+    Text = ${SendActivity_H8gQFl_text()}
+]
+
+# SendActivity_H8gQFl_text()
+- Welcome to the **${settings["Dgmjr.AboutThisBot"].BotName}**, ${user.telegram.username}!
+# BotBuilderCommunityGuidInput_Prompt_akuEk3()
+[Activity
+    Text = ${BotBuilderCommunityGuidInput_Prompt_akuEk3_text()}
+]
+
+# BotBuilderCommunityGuidInput_Prompt_akuEk3_text()
+- Enter a GUID:
+- GUID plz:

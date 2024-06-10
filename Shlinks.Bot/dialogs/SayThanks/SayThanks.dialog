@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "ifvYaZ",
+    "name": "SayThanks",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "kUTgBq"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ciWZ0c"
+          },
+          "activity": "${SendActivity_ciWZ0c()}"
+        }
+      ]
+    }
+  ],
+  "generator": "SayThanks.lg",
+  "recognizer": "SayThanks.lu.qna",
+  "id": "SayThanks"
+}

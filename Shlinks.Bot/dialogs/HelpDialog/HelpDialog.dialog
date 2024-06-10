@@ -1,0 +1,41 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "qnxGd1",
+    "name": "HelpDialog",
+    "comment": "Gives the user some help information on what he can do in the bot."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "7xBzOD"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "jbLk3y"
+          },
+          "activityProcessed": true,
+          "dialog": "EnsureInitilalized"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SGgxKX"
+          },
+          "activity": "${SendActivity_SGgxKX()}",
+          "disabled": false
+        }
+      ]
+    }
+  ],
+  "generator": "HelpDialog.lg",
+  "recognizer": "HelpDialog.lu.qna",
+  "id": "HelpDialog"
+}

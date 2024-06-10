@@ -1,0 +1,83 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": [
+    "implements(Microsoft.IAdapter)",
+    "implements(Microsoft.IDialog)"
+  ],
+  "title": "Shlinks API Configuration",
+  "description": "Connects the bot to Shlinks's link shortener service.",
+  "type": "object",
+  "required": [
+    "ApiKey"
+  ],
+  "properties": {
+    "ApiKey": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "API Key",
+      "description": "The API key.",
+      "examples": [
+        "sk_myapikey123"
+      ]
+    },
+    "defaultTags": {
+      "type": "object",
+      "title": "Default Tags",
+      "description": "The default tags by domain.",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "title": "Tag",
+          "description": "A tag to apply to links from this domain.",
+          "examples": [
+            "events",
+            "parties",
+            "user profiles"
+          ],
+          "uniqueItems": true
+        },
+        "title": "Tags by Domain",
+        "description": "The tags to apply to links from this domain.",
+        "uniqueItems": true
+      }
+    },
+    "linkCreators": {
+      "$ref": "schema:#/definitions/arrayExpression",
+      "items": {
+        "$ref": "schema:#/definitions/stringExpression"
+      },
+      "title": "Link Creators",
+      "description": "The Telegram usernames (without the \"@\") of users who may create links."
+    },
+    "linkAdministrators": {
+      "$ref": "schema:#/definitions/arrayExpression",
+      "items": {
+        "$ref": "schema:#/definitions/stringExpression"
+      },
+      "title": "Link Administrators",
+      "description": "The Telegram usernames of users who may administer links (including delete ones that they didn't create)."
+    },
+    "domains": {
+      "$ref": "schema:#/definitions/arrayExpression",
+      "items": {
+        "$ref": "schema:#/definitions/stringExpression"
+      },
+      "title": "Domains",
+      "description": "The domains this bot supports."
+    },
+    "administratorUsername": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Administrator username",
+      "description": "The username of a user who can change the bot's settings.",
+      "examples": [
+        "myusername"
+      ]
+    },
+    "unauthorizedMessage": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Unauthorized message",
+      "description": "The message that will be displayed when a user tries to do something he's not authorized to do.",
+      "default": "You are not authorized to do that."
+    }
+  }
+}

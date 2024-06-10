@@ -1,0 +1,110 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "DWWVhk",
+    "name": "Test",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "s3qdg3"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "juQQko"
+          },
+          "value": "Foo!"
+        },
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "ymt9xH"
+          },
+          "value": "Baz"
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "A6IzKB"
+          },
+          "resultProperty": "turn.currentOperationPop"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SknJOD"
+          },
+          "activity": "${SendActivity_SknJOD()}"
+        },
+        {
+          "$kind": "Dgmjr.StackAction",
+          "$designer": {
+            "id": "xhdfcF"
+          },
+          "changeType": "push",
+          "itemsProperty": "conversation.theStack",
+          "value": "Foo!",
+          "disabled": true
+        },
+        {
+          "$kind": "Dgmjr.StackAction",
+          "$designer": {
+            "id": "1alVgY"
+          },
+          "changeType": "push",
+          "itemsProperty": "conversation.theStack",
+          "value": "Bar!",
+          "disabled": true
+        },
+        {
+          "$kind": "Dgmjr.StackAction",
+          "$designer": {
+            "id": "nyRVj9"
+          },
+          "changeType": "pop",
+          "itemsProperty": "conversation.theStack",
+          "resultProperty": "turn.poppedValue",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "YBrgFR"
+          },
+          "activity": "${SendActivity_YBrgFR()}"
+        },
+        {
+          "$kind": "Dgmjr.StackAction",
+          "$designer": {
+            "id": "74WhJu"
+          },
+          "changeType": "pop",
+          "itemsProperty": "conversation.theStack",
+          "resultProperty": "turn.poppedValue",
+          "disabled": true
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "1yxSig"
+          },
+          "activity": "${SendActivity_1yxSig()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Test.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "Test"
+}

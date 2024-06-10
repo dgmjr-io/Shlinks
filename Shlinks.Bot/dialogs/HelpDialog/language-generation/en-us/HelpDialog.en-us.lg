@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_SGgxKX()
+[Activity
+    Text = ${SendActivity_SGgxKX_text()}
+]
+
+# SendActivity_SGgxKX_text()
+- ```I can help you create shortlinks in the ${conversation.link.domain} domain or any of the supported /domains.
+
+
+
+Send /newlink to create a new link
+
+Send /domains to see the list of supported domains
+
+Send /del to Delete a link
+
+Send /about to display information about this bot
+
+Send /author to display information about the bot's author
+
+Send /help to display this message```

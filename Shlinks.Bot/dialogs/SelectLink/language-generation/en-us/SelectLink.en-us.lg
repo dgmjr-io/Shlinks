@@ -1,0 +1,16 @@
+[import](common.lg)
+
+# Shlinks.SelectLink_Prompt_vIwiqx()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_vIwiqx_text()}
+]
+
+# Shlinks.SelectLink_Prompt_vIwiqx_text()
+- Select a link:
+# Shlinks.SelectLink_InvalidPrompt_vIwiqx()
+[Activity
+    Text = ${Shlinks.SelectLink_InvalidPrompt_vIwiqx_text()}
+]
+
+# Shlinks.SelectLink_InvalidPrompt_vIwiqx_text()
+- Dude, you have to pick from one of the options I give you!

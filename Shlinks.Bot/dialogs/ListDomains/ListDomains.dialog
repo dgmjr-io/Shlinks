@@ -1,0 +1,129 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "mSIY3B",
+    "name": "ListDomains",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "ACwT2i"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "2xK4LD"
+          },
+          "condition": "=count(settings[\"Shlinks\"].domains) > 1",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "U3Gh9K"
+              },
+              "assignments": [
+                {
+                  "property": "turn.choices",
+                  "value": "=concat([   \"Cancel\" ], settings[\"Shlinks\"].domains)"
+                },
+                {
+                  "property": "turn.tempDomain",
+                  "value": "=coalesce(conversation.link.domain, settings[\"Shlinks\"].defaultDomain)"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "SjDE2u"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": true,
+              "allowInterruptions": true,
+              "prompt": "${ChoiceInput_Prompt_SjDE2u()}",
+              "invalidPrompt": "${ChoiceInput_InvalidPrompt_SjDE2u()}",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or ",
+                "inlineSeparator": ", "
+              },
+              "property": "turn.choice",
+              "validations": [],
+              "defaultValueResponse": "${ChoiceInput_DefaultValueResponse_SjDE2u()}",
+              "style": "suggestedAction",
+              "defaultValue": "=settings[\"Shlinks\"].defaultDomain",
+              "choices": "=turn.choices",
+              "recognizerOptions": {
+                "recognizeOrdinals": true,
+                "recognizeNumbers": true
+              }
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "giSAHe"
+              },
+              "condition": "=turn.choice != 'Cancel'",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "dhGXw2"
+                  },
+                  "property": "conversation.link.domain",
+                  "value": "=turn.choice"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "fFtZc6"
+                  },
+                  "activity": "${SendActivity_fFtZc6()}"
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "hiNL7F"
+              },
+              "activity": "${SendActivity_hiNL7F()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "22Nwvb"
+          },
+          "condition": "=coalesce($ShowHelp, true)",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "2SiQmp"
+              },
+              "activityProcessed": true,
+              "dialog": "HelpDialog"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "ListDomains.lg",
+  "recognizer": "ListDomains.lu.qna",
+  "id": "ListDomains"
+}

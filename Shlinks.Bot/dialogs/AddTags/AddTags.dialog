@@ -1,0 +1,108 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "pecJMO",
+    "name": "AddTags",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "8i0xtO"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "Fxhnrj"
+          },
+          "value": "AddTags"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "IU8jru"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_IU8jru()}",
+          "property": "dialog.tag"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "rBIFck"
+          },
+          "condition": "=dialog.tag",
+          "cases": [
+            {
+              "value": "/done",
+              "actions": [
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "wXu7VW"
+                  }
+                }
+              ]
+            },
+            {
+              "value": "/remove",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "TjvhiX"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "RemoveTag"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "8ayZaz"
+              },
+              "changeType": "push",
+              "itemsProperty": "conversation.link.tags",
+              "value": "=dialog.tag"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "HNPByS"
+              },
+              "activityProcessed": true
+            }
+          ]
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "gRMJPa"
+          },
+          "resultProperty": "turn.poppedValue"
+        }
+      ]
+    }
+  ],
+  "generator": "AddTags.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "AddTags"
+}

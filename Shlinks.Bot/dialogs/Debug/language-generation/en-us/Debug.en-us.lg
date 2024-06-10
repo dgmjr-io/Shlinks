@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_5esJJz()
+[Activity
+    Text = ${SendActivity_5esJJz_text()}
+]
+
+# SendActivity_5esJJz_text()
+- turn.activity: ${jsonStringify(turn.activity)}

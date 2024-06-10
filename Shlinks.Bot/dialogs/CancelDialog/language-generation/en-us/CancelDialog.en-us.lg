@@ -1,0 +1,44 @@
+[import](common.lg)
+
+# ConfirmCancel()
+- Are you sure you want to cancel?
+- Hey, sure, I can cancel this operation for you, but are you sure?
+- Sure I can cancel it for you; are you sure?
+- Are you sure?
+- You sure you want to cancel?
+# SendConfirmCancel()
+[Activity
+    Text = ${ConfirmCancel()}
+]
+
+# SendNothingToCancel()
+[Activity
+    Text = ${NothingToCancel()}
+]
+
+# NothingToCancel()
+- Hey, you knucklehead, you're not doing anything right now so there's nothing for me to cancel!
+- Hey, numbskull, we're not in the middle of anything right now so there's nothing to cancel!
+- Nothing to cancel, Bro.
+- There's nothing to cancel.
+# SendCancellationConfirmed()
+[Activity
+    Text = ${CancellationConfirmed()}
+]
+
+# CancellationConfirmed()
+- Ok, I've cancelled the operation.
+- It's cancelled.
+- Done.
+- Fine, I've cancelled it for you.
+# SendNowWhereWereWe()
+[Activity
+    Text = ${NowWhereWereWe()}
+]
+
+# NowWhereWereWe()
+- Ok, now where were we?
+- Ok, let's continue, shall we?
+- Great.  Now, where were we...
+- Cool.  Now, as you were:
+- Very well.  As you were:

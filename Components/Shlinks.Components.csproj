@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);CS1591;NU1504;IDE0065</NoWarn>
+    <GenerateNuspec>true</GenerateNuspec>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dgmjr.BotFramework.Core" />
+    <PackageReference Include="System.Text.Json.Usings" />
+    <PackageReference Include="Telegram.Bot.Components" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageFile Include="./icon.png" Pack="true" PackagePath="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Services/Shlinks.Services.csproj" />
+    <ProjectReference Include="../Models/Shlinks.Models.csproj" />
+  </ItemGroup>
+
+</Project>

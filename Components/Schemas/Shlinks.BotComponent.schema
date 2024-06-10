@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "extends(Dgmjr.BotCustomComponentAction)",
+  "type": "object",
+  "title": "Shlinks Bot Component",
+  "description": "The base class for the Shlinks bot components.",
+  "required": [
+    "apiKey",
+    "resultProperty",
+    "baseUrl"
+  ],
+  "properties": {
+    "apiKey": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "API Key",
+      "description": "The Shlinks API key",
+      "default": "=settings[\"Shlinks\"].apiKey",
+      "examples": [
+        "sk_MEJXTl3KBMqVXEt3",
+        "=settings[\"Shlinks\"].apiKey"
+      ]
+    },
+    "baseUrl": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Base URL",
+      "description": "The API's base URL (the default should be fine).",
+      "default": "=settings[\"Shlinks\"].baseUrl",
+      "examples": [
+        "=settings[\"Shlinks\"].baseUrl"
+      ]
+    }
+  }
+}

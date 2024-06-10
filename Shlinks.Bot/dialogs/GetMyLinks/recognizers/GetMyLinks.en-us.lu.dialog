@@ -1,0 +1,8 @@
+{
+  "$kind": "Microsoft.LuisRecognizer",
+  "id": "LUIS_GetMyLinks",
+  "applicationId": "=settings.luis.GetMyLinks_en_us_lu.appId",
+  "version": "=settings.luis.GetMyLinks_en_us_lu.version",
+  "endpoint": "=settings.luis.endpoint",
+  "endpointKey": "=settings.luis.endpointKey"
+}

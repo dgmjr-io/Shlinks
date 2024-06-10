@@ -1,0 +1,55 @@
+<Project>
+  <Import Project="Sdk.props" Sdk="DgmjrSdk" Condition="'$(DgmjrSdkProps)' == ''" />
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
+    <NoWarn>$(NoWarn);IDE0065;CS1591</NoWarn>
+    <BuildFromSource>false</BuildFromSource>
+    <!-- <EnableCentralPackageVersions>false</EnableCentralPackageVersions> -->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="$(MSBuildProjectDirectory)/**/*.blu;$(MSBuildProjectDirectory)/**/*.dialog;$(MSBuildProjectDirectory)/**/*.lg;$(MSBuildProjectDirectory)/**/*.lu;$(MSBuildProjectDirectory)/**/*.model;$(MSBuildProjectDirectory)/**/*.onnx;$(MSBuildProjectDirectory)/**/*.qna;$(MSBuildProjectDirectory)/**/*.txt" Exclude="$(BaseOutputPath)/**;$(BaseIntermediateOutputPath)/**;wwwroot/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="$(MSBuildProjectDirectory)/settings/*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(MSBuildProjectDirectory)/icon.png" Pack="true" PackagePath="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$(MSBuildProjectDirectory)/**/*.dialog" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.lg" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.lu" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.schema" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.uischema" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.qna" />
+    <Content Include="$(MSBuildProjectDirectory)/README.md" />
+  </ItemGroup>
+
+  <!-- <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)/Shared/Namespaces.cs" />
+  </ItemGroup> -->
+<!--
+  <ItemGroup>
+    <PackageReference Include="NuGetizer" Version="[1.2.1,)" />
+  </ItemGroup> -->
+
+  <ItemGroup>
+    <Using Include="Dgmjr.BotFramework" />
+    <Using Include="Dgmjr.BotFramework.Core" />
+    <Using Include="Dgmjr.BotFramework.Attributes" />
+    <Using Include="Dgmjr.BotFramework.Abstractions" />
+    <Using Include="Dgmjr.BotFramework.Settings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Text.Json.Serialization.JsonPropertyNameAttribute" Alias="JPropAttribute" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageTag Include="msbot-action" />
+  </ItemGroup>
+</Project>

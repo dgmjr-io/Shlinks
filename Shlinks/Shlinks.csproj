@@ -1,0 +1,39 @@
+<!--
+ * Shlinks.Models.csproj
+ *     Created: 2024-52-19T22:52:23-04:00
+ *    Modified: 2024-52-19T22:52:24-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dgmjr.BotFramework.Core" />
+    <PackageReference Include="System.Text.Json.Usings" />
+    <PackageReference Include="Telegram.Bot.Components" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Models/Shlinks.Models.csproj" />
+    <ProjectReference Include="../Services/Shlinks.Services.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Microsoft.Extensions.DependencyInjection" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="Microsoft.Extensions.Options" />
+    <Using Include="Shlinks.Requests" />
+    <Using Include="Shlinks.Models" />
+    <Using Include="Shlinks" />
+    <Using Include="System.Net.Http" />
+  </ItemGroup>
+</Project>

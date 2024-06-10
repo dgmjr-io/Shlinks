@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "extends(Shlinks.BotComponent)",
+  "type": "object",
+  "title": "Get My Links",
+  "description": "Creates a new shortlink using the Shlinks API.",
+  "required": [
+    "apiKey",
+    "domain",
+    "resultProperty",
+    "baseUrl"
+  ],
+  "properties": {
+    "domain": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Domain",
+      "description": "The domain to which the shortlink is assigned.",
+      "default": "=settings[\"Shlinks\"].defaultDomain",
+      "examples": [
+        "Shlinks"
+      ]
+    },
+    "fullResponse": {
+      "$ref": "schema:#/definitions/booleanExpression",
+      "title": "Include Full Response?",
+      "description": "True if you want to include the complete API response in the returned property; false to include only essential elements.",
+      "default": false,
+      "examples": [
+        true,
+        false,
+        "=dialog.fullResponse"
+      ]
+    }
+  }
+}

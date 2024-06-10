@@ -1,0 +1,290 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "CxJZQm",
+    "name": "NewLink",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FrLdfT"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "AjgBDo"
+          },
+          "activityProcessed": true,
+          "dialog": "EnsureInitilalized"
+        },
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "JTWepS"
+          },
+          "value": "NewLink"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "OwfWqe"
+          },
+          "condition": "=contains(settings[\"Shlinks\"].linkCreators, user.telegram.username)",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "cImXyW"
+              },
+              "assignments": [
+                {
+                  "property": "user.isCreatingNewLink",
+                  "value": true
+                },
+                {
+                  "property": "conversation.currentOperation",
+                  "value": "NewLink"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "nhtZ6x"
+              },
+              "activityProcessed": true,
+              "dialog": "ChangeUrl"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "9mXCR2"
+              },
+              "activityProcessed": true,
+              "dialog": "ChangeSlug"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "B5pACN"
+              },
+              "activityProcessed": true,
+              "dialog": "AddTags"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "8v9C3s"
+              },
+              "activityProcessed": true,
+              "dialog": "ConfirmLink"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "FWSf6D"
+              },
+              "activity": "${SendActivity_FWSf6D()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "mx8fBX"
+          },
+          "resultProperty": "turn.poppedValue"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "qv0Fn7",
+        "name": "ChangeUrl"
+      },
+      "intent": "ChangeUrl",
+      "entities": [
+        "url"
+      ],
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "42HiRB"
+          },
+          "condition": "=turn.recognized.entities.url[0] != null",
+          "elseActions": [],
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "PBbKuP"
+              },
+              "property": "conversation.link.url",
+              "value": "=turn.recognized.entities.url[0] "
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "0POkBs"
+          },
+          "activityProcessed": true,
+          "dialog": "ChangeUrl"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Zpfcyj",
+        "name": "Done"
+      },
+      "intent": "Done"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "LYTrIL",
+        "name": "AddTags"
+      },
+      "intent": "AddTags",
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "JFF1u2"
+          },
+          "condition": "=turn.recognized.entities.tag[0] != null",
+          "elseActions": [],
+          "actions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "snCqzn"
+              },
+              "changeType": "push",
+              "itemsProperty": "conversation.link.tags",
+              "resultProperty": "conversation.link.tags",
+              "value": "=turn.recognized.entities.tag[0]"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "MPprLU"
+          },
+          "activityProcessed": true,
+          "dialog": "AddTags"
+        }
+      ],
+      "entities": [
+        "tag"
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "30kU8u",
+        "name": "RequestCancellation"
+      },
+      "intent": "RequestCancellation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ZO3OoO"
+          },
+          "activityProcessed": true,
+          "dialog": "CancelDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "MiN7jq",
+        "name": "ChangeSlug"
+      },
+      "intent": "ChangeSlug",
+      "entities": [
+        "slug"
+      ],
+      "actions": [
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "z9cFoZ"
+          },
+          "condition": "=turn.recognized.entities.slug[0] != null",
+          "elseActions": [],
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "HkBSTf"
+              },
+              "property": "conversation.link.slug",
+              "value": "=turn.recognized.entities.slug[0] "
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "VuZNbX"
+          },
+          "activityProcessed": true,
+          "dialog": "ChangeSlug"
+        }
+      ]
+    }
+  ],
+  "generator": "NewLink.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "ChangeUrl",
+        "pattern": "^/url\\s*(?<url>https?:[^\\s]+)$"
+      },
+      {
+        "intent": "Done",
+        "pattern": "/done2"
+      },
+      {
+        "intent": "AddTagsIntent",
+        "pattern": "/tag(s\\s*(?<tag>[^\\s]+))?"
+      },
+      {
+        "intent": "RequestCancellation",
+        "pattern": "/cancel"
+      },
+      {
+        "intent": "ChangeSlugIntent",
+        "pattern": "/slug(\\s*(?<slug>[^\\s]+))?"
+      },
+      {
+        "intent": "AddTags",
+        "pattern": "^/tag(?:s?\\s*(?<tag>[^\\s]+))?$"
+      },
+      {
+        "intent": "ChangeSlug",
+        "pattern": "^/slug\\s*(?<slug>[^\\s]+)?$"
+      }
+    ]
+  },
+  "id": "NewLink"
+}

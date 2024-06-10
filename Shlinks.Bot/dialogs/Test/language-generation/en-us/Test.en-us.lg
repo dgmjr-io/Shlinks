@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# SendActivity_1yxSig()
+[Activity
+    Text = ${SendActivity_1yxSig_text()}
+]
+
+# SendActivity_1yxSig_text()
+- turn.poppedValue = ${turn.poppedValue}
+# SendActivity_YBrgFR_text()
+- turn.poppedValue = ${turn.poppedValue}
+# SendActivity_YBrgFR()
+[Activity
+    Text = ${SendActivity_YBrgFR_text()}
+]
+
+# SendActivity_SknJOD_text()
+- turn.currentOperationPop = ${turn.currentOperationPop}
+# SendActivity_SknJOD()
+[Activity
+    Text = ${SendActivity_SknJOD_text()}
+]

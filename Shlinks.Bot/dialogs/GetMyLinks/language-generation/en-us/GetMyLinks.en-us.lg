@@ -1,0 +1,59 @@
+[import](common.lg)
+
+# SendActivity_JoXrLm()
+[Activity
+    Text = ${SendActivity_JoXrLm_text()}
+]
+
+# SendActivity_JoXrLm_text()
+- Hey, you knucklehead, that wasn't one of the options!
+# LogAction_Text_P87V43()
+[Activity
+    Text = ${LogAction_Text_P87V43_text()}
+]
+
+# LogAction_Text_P87V43_text()
+- Shlinks.linkstochoices(user.myLinks): ${user.myLinks.asChoices}
+# TextInput_Prompt_Gi3hGp()
+[Activity
+    Text = ${TextInput_Prompt_Gi3hGp_text()}
+    SuggestedActions = ${turn.linksChoices}
+]
+
+# TextInput_Prompt_Gi3hGp_text()
+- Your links are below,  Tap one to delete it.
+# Shlinks.SelectLink_UnrecognizedPrompt_GI903I()
+[Activity
+    Text = ${Shlinks.SelectLink_UnrecognizedPrompt_GI903I_text()}
+]
+
+# Shlinks.SelectLink_UnrecognizedPrompt_GI903I_text()
+- You knucklehead, that wasn't one of the options!
+# Shlinks.SelectLink_Prompt_GI903I()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_GI903I_text()}
+]
+
+# Shlinks.SelectLink_Prompt_GI903I_text()
+- Please select a link:
+# BotBuilderCommunityEmailInput_Prompt_6CfDpa()
+[Activity
+    Text = ${BotBuilderCommunityEmailInput_Prompt_6CfDpa_text()}
+]
+
+# BotBuilderCommunityEmailInput_Prompt_6CfDpa_text()
+- Enter your email address:
+# BotBuilderCommunityEmailInput_UnrecognizedPrompt_6CfDpa()
+[Activity
+    Text = ${BotBuilderCommunityEmailInput_UnrecognizedPrompt_6CfDpa_text()}
+]
+
+# BotBuilderCommunityEmailInput_UnrecognizedPrompt_6CfDpa_text()
+- Huh?!
+# SendActivity_2HBJSQ()
+[Activity
+    Text = ${SendActivity_2HBJSQ_text()}
+]
+
+# SendActivity_2HBJSQ_text()
+- The link ${turn.selectedLink.shortUrl} has been deleted.

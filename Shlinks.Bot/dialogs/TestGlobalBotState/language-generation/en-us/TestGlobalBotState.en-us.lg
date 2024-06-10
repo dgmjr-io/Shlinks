@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# SendActivity_tNSa3j()
+[Activity
+    Text = ${SendActivity_tNSa3j_text()}
+]
+
+# SendActivity_tNSa3j_text()
+- global.foo: ${global.foo}

@@ -1,0 +1,15 @@
+[import](common.lg)
+
+# TagsPrompt()
+- ```Enter a "tag" for this link.  Tags you've already selected are below:
+
+
+${join(select(coalesce(conversation.link.tags, settings["Shlinks"].defaultTags[conversation.link.domain]), item => "* " + item), "\n\n")}
+
+
+Send "/done" to finish.
+Send "/remove" to remove a tag.```
+# TextInput_Prompt_IU8jru()
+[Activity
+    Text = ${TagsPrompt()}
+]

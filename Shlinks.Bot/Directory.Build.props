@@ -1,0 +1,73 @@
+<Project>
+  <Import Project="Sdk.props" Sdk="DgmjrSdk" />
+  <PropertyGroup>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <TargetFramework>net8.0</TargetFramework>
+    <EnableCentralPackageVersions>false</EnableCentralPackageVersions>
+    <BuildFromSource>false</BuildFromSource>
+    <Version>0.0.1-Local</Version>
+    <PackageVersionOverride>0.0.1-Local</PackageVersionOverride>
+    <AssemblyVersion>0.0.1.0</AssemblyVersion>
+    <IsBuildingInDocker Condition="'$(IsBuildingInDocker)' == ''">false</IsBuildingInDocker>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <Content Include="$(MSBuildProjectDirectory)/**/*.blu;$(MSBuildProjectDirectory)/**/*.dialog;$(MSBuildProjectDirectory)/**/*.lg;$(MSBuildProjectDirectory)/**/*.lu;$(MSBuildProjectDirectory)/**/*.model;$(MSBuildProjectDirectory)/**/*.onnx;$(MSBuildProjectDirectory)/**/*.qna;$(MSBuildProjectDirectory)/**/*.txt" Exclude="$(BaseOutputPath)/**;$(BaseIntermediateOutputPath)/**;wwwroot/**">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="$(MSBuildProjectDirectory)/settings/*.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageFile Include="$(MSBuildProjectDirectory)/icon.png" Pack="true" PackagePath="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json.Usings" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks.Api" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks.Models" Version="[0.0.1-Local,)" />
+    <PackageReference Update="Shlinks.Components" Version="[0.0.1-Local,)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="System.Text.Json.Serialization.JsonNumberHandling" Alias="JNumbers" />
+    <Using Include="System.Text.Json.JsonNamingPolicy" Alias="JNaming" />
+    <Using Include="System.Text.Json.Serialization.JsonIgnoreAttribute" Alias="JIgnoreAttribute" />
+    <Using Include="System.Text.Json.Serialization.JsonIgnoreCondition" Alias="JIgnore" />
+    <Using Include="System.Text.Json.Serialization.ReferenceHandler" Alias="ReferenceHandler" />
+    <Using Include="System.Text.Json.JsonCommentHandling" Alias="JComments" />
+  </ItemGroup>
+
+  <!-- <ItemGroup>
+    <Content Include="$(MSBuildProjectDirectory)/**/*.dialog" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.lg" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.lu" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.schema" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.uischema" />
+    <Content Include="$(MSBuildProjectDirectory)/**/*.qna" />
+    <Content Include="$(MSBuildProjectDirectory)/README.md" />
+  </ItemGroup> -->
+
+  <!-- <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)/Shared/Namespaces.cs" />
+  </ItemGroup> -->
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Bot.Builder.Dialogs" Version="[4.22.3,}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Dgmjr.BotFramework" />
+    <Using Include="Dgmjr.BotFramework.Core" />
+    <Using Include="Dgmjr.BotFramework.Attributes" />
+    <Using Include="Dgmjr.BotFramework.Abstractions" />
+    <Using Include="Dgmjr.BotFramework.Settings" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageTag Include="msbot-action" />
+  </ItemGroup>
+</Project>

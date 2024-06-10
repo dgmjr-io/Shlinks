@@ -1,0 +1,307 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Xm1TxY",
+    "name": "EditLink",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "lh4cjh"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "E6RnMB"
+          },
+          "value": "EditLink"
+        },
+        {
+          "$kind": "Shlinks.SelectLink",
+          "$designer": {
+            "id": "c2vCVK"
+          },
+          "domain": "=settings[\"Shlinks\"].defaultDomain",
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "property": "turn.result",
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "resultProperty": "conversation.selectedLink",
+          "prompt": "${Shlinks.SelectLink_Prompt_c2vCVK()}",
+          "invalidPrompt": "${Shlinks.SelectLink_InvalidPrompt_c2vCVK()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "lqYh1e"
+          },
+          "assignments": [
+            {
+              "property": "conversation.link.url",
+              "value": "=conversation.selectedLink.originalURL"
+            },
+            {
+              "property": "conversation.link.slug",
+              "value": "=conversation.selectedLink.path"
+            },
+            {
+              "property": "conversation.link.domain",
+              "value": "=conversation.selectedLink.domain"
+            },
+            {
+              "property": "conversation.link.tags",
+              "value": "=conversation.selectedLink.tags"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EmitEvent",
+          "$designer": {
+            "id": "BcT9dA"
+          },
+          "handledProperty": "turn.eventHandled",
+          "eventName": "LinkSelected"
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "ouePsO"
+          },
+          "resultProperty": "turn.poppedValue"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnDialogEvent",
+      "$designer": {
+        "id": "bDmTVF",
+        "name": "LinkSelected"
+      },
+      "event": "LinkSelected",
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "WFys0t"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${ChoiceInput_Prompt_WFys0t()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            {
+              "value": "yes",
+              "action": {
+                "type": "imBack",
+                "title": "I'm done!",
+                "value": "yes"
+              }
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the URL",
+                "value": "url"
+              },
+              "value": "url"
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the slug",
+                "value": "slug"
+              },
+              "value": "slug"
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the tags",
+                "value": "tags"
+              },
+              "value": "tags"
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the domain",
+                "value": "domain"
+              },
+              "value": "domain"
+            }
+          ],
+          "property": "dialog.choice",
+          "style": "suggestedAction",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "sCjw88"
+          },
+          "condition": "=dialog.choice",
+          "cases": [
+            {
+              "value": "yes",
+              "actions": [
+                {
+                  "$kind": "Shlinks.UpdateShortlink",
+                  "$designer": {
+                    "id": "U00usL"
+                  },
+                  "apiKey": "=settings[\"Shlinks\"].apiKey",
+                  "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+                  "disabled": false,
+                  "resultProperty": "turn.result",
+                  "linkId": "=turn.selectedLink.idString",
+                  "url": "=conversation.link.url",
+                  "domain": "=conversation.link.domain",
+                  "slug": "=conversation.link.slug",
+                  "tags": "=conversation.link.tags"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "AtP9zC"
+                  },
+                  "activity": "${SendActivity_AtP9zC()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "cqoXGp"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "SayThanks"
+                }
+              ]
+            },
+            {
+              "value": "url",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "qRXpcv"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ChangeUrl"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "7zKBbG"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            },
+            {
+              "value": "slug",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "WqKFxM"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ChangeSlug"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "uCes8Q"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            },
+            {
+              "value": "tags",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "HTJ7Le"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "AddTags"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "Dfo2u1"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            },
+            {
+              "value": "domain",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Nk3Iwl"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ListDomains",
+                  "options": {
+                    "ShowHelp": "false"
+                  }
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "VaVR18"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "T9SM2M"
+              },
+              "activity": "${SendActivity_T9SM2M()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "XOAOOS"
+              },
+              "activityProcessed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "EditLink.lg",
+  "recognizer": "EditLink.lu.qna",
+  "id": "EditLink"
+}

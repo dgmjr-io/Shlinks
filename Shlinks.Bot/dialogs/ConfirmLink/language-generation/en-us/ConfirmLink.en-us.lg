@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_qAemzN()
+[Activity
+    Text = ${ChoiceInput_Prompt_qAemzN_text()}
+]
+
+# ChoiceInput_Prompt_qAemzN_text()
+- ```Ok, Bro, this is what I'm about to submit for you:
+
+
+**Link:** https://${conversation.link.domain}/${conversation.link.slug}
+
+**Redirects to:** ${conversation.link.url}
+
+**Tags:** ${join(conversation.link.tags, ", ")}
+
+
+Does everything look good?```
+# SendActivity_p9a03Y()
+[Activity
+    Text = ${SendActivity_p9a03Y_text()}
+]
+
+# SendActivity_p9a03Y_text()
+- Bro, you have to pick from the choices I gave you.  Let's try this again, shall we?
+- Bro, that wasn't one of the options.  Try again.
+- Bro, you don't make the rules around here; I do!  Now, where were we?
+# SendActivity_NTtK0J()
+[Activity
+    Text = ${SendActivity_NTtK0J_text()}
+]
+
+# SendActivity_NTtK0J_text()
+- ```Your link has been created and is now live!
+
+Visit it at ${turn.createdLink.ShortUrl}.```

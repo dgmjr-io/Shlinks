@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/botbuilder-dotnet/main/libraries/Microsoft.Bot.Builder.Dialogs.Adaptive/Schemas/Microsoft.AdaptiveDialog.schema",
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NewNewLink",
+    "name": "NewNewLink",
+    "comment": ""
+  },
+  "id": "NewNewLink",
+  "generator": "NewNewLink.lg",
+  "defaultResultProperty": "dialog.result",
+  "autoEndDialog": true,
+  "recognizer": {
+    "$kind": "Microsoft.LuisRecognizer",
+    "applicationId": "",
+    "endpoint": "",
+    "endpointKey": "",
+    "externalEntityRecognizer": {
+      "$kind": "Microsoft.LuisRecognizer",
+      "applicationId": "",
+      "endpoint": "",
+      "endpointKey": ""
+    }
+  },
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "m1Cknq",
+        "name": "Begin Dialog"
+      },
+      "actions": []
+    }
+  ]
+}

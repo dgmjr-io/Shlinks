@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# MakeSuggestedActions()
+- ${select(conversation.link.tags, tag => { "type": "imBack", title: tag, value: tag })}
+# SendActivity_hwH66q()
+[Activity
+    Text = ${SendActivity_hwH66q_text()}
+]
+
+# SendActivity_hwH66q_text()
+- You haven't added any tags yet.
+- There aren't any tags.
+- There aren't any tags to remove, you knucklehead.
+# ChoiceInput_Prompt_GUQNi1()
+[Activity
+    Text = ${ChoiceInput_Prompt_GUQNi1_text()}
+]
+
+# ChoiceInput_Prompt_GUQNi1_text()
+- Which tag would you like to remove? Tap it to remove it or send "/cancel" to cancel.

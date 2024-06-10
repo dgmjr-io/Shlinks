@@ -1,0 +1,84 @@
+<!--
+ * Shlinks.Models.csproj
+ *     Created: 2024-52-19T22:52:23-04:00
+ *    Modified: 2024-52-19T22:52:24-04:00
+ *      Author: David G. Moore, Jr. <david@dgmjr.io>
+ *   Copyright: © 2022 - 2024 David G. Moore, Jr., All Rights Reserved
+ *     License: MIT (https://opensource.org/licenses/MIT)
+-->
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <OutputType>Library</OutputType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dgmjr.BotFramework.Core" />
+    <PackageReference Include="Microsoft.Extensions.Logging" />
+    <PackageReference Include="Newtonsoft.Json.Extensions" />
+    <PackageReference Include="System.Net.Http" />
+    <PackageReference Include="System.Text.Json.Usings" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive.Runtime" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive" />
+    <PackageReference Include="MediatR" />
+    <PackageReference Include="Dgmjr.System.Extensions" />
+  </ItemGroup>
+
+  <ItemGroup>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Microsoft.Extensions.DependencyInjection" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="Microsoft.Extensions.Options" />
+    <Using Include="Shlinks.Requests" />
+    <Using Include="Shlinks.Models" />
+    <Using Include="Shlinks" />
+    <Using Include="System.Net.Http" />
+
+    <Using Include="System.Text.Json" />
+    <Using Include="System.Text.Json" Alias="Json" />
+    <Using Include="System.Text.Json.JsonCommentHandling" Alias="JComments" />
+    <Using Include="System.Text.Json.JsonDocument" Alias="JDoc" />
+    <Using Include="System.Text.Json.JsonDocumentOptions" Alias="JDocOpts" />
+    <Using Include="System.Text.Json.JsonElement" Alias="JElem" />
+    <Using Include="System.Text.Json.JsonException" Alias="JException" />
+    <Using Include="System.Text.Json.JsonElement" Alias="JElement" />
+    <Using Include="System.Text.Json.JsonEncodedText" Alias="JEncodedTxt" />
+    <Using Include="System.Text.Json.JsonSerializer" Static="true" />
+    <Using Include="System.Text.Json.JsonSerializer" Alias="JSer" />
+    <Using Include="System.Text.Json.JsonSerializerOptions" Alias="Jso" />
+    <Using Include="System.Text.Json.JsonTokenType" Alias="JTokenType" />
+    <Using Include="System.Text.Json.Nodes.JsonArray" Alias="JArray" />
+    <Using Include="System.Text.Json.Nodes.JsonNode" Alias="JNode" />
+    <Using Include="System.Text.Json.Nodes.JsonNodeOptions" Alias="JNodeOpts" />
+    <Using Include="System.Text.Json.Nodes.JsonObject" Alias="JObject" />
+    <Using Include="System.Text.Json.Nodes.JsonValue" Alias="JValue" />
+    <Using Include="System.Text.Json.Serialization" />
+    <Using Include="System.Text.Json.Serialization.JsonConstructorAttribute" Alias="JCtorAttribute" />
+    <Using Include="System.Text.Json.Serialization.JsonConverter" Alias="JConverter" />
+    <Using Include="System.Text.Json.Serialization.JsonConverterAttribute" Alias="JConverterAttribute" />
+    <Using Include="System.Text.Json.Serialization.JsonIgnoreAttribute" Alias="JIgnoreAttribute" />
+    <Using Include="System.Text.Json.Serialization.JsonIgnoreCondition" Alias="JIgnore" />
+    <Using Include="System.Text.Json.Serialization.JsonIncludeAttribute" Alias="JInclude" />
+    <Using Include="System.Text.Json.Serialization.JsonUnknownTypeHandling" Alias="JUnknownTypes" />
+    <Using Include="System.Text.Json.Serialization.JsonKnownNamingPolicy" Alias="JKnownNames" Condition="$(DefineConstants.Contains('NET6_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.JsonNamingPolicy" Alias="JNaming" />
+    <Using Include="System.Text.Json.Serialization.JsonNumberHandling" Alias="JNumbers" />
+    <Using Include="System.Text.Json.Serialization.JsonNumberHandlingAttribute" Alias="JNumbersAttribute" />
+    <Using Include="System.Text.Json.Serialization.JsonPolymorphicAttribute" Alias="JPolymorphicAttribute" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.Serialization.JsonPropertyNameAttribute" Alias="JPropAttribute" />
+    <Using Include="System.Text.Json.Serialization.JsonPropertyOrderAttribute" Alias="JOrder" />
+    <Using Include="System.Text.Json.Serialization.JsonRequiredAttribute" Alias="JRequired" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.Serialization.JsonSerializableAttribute" Alias="JSerializableAttribute" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.Serialization.JsonSerializerContext" Alias="JSerCtx" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.Serialization.JsonSourceGenerationMode" Alias="JGenMode" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.Serialization.JsonSourceGenerationOptionsAttribute" Alias="JSrcGenAttribute" Condition="$(DefineConstants.Contains('NET7_0_OR_GREATER'))" />
+    <Using Include="System.Text.Json.Serialization.JsonStringEnumConverter" Alias="JStringEnumConverter" />
+    <Using Include="System.Text.RegularExpressions" />
+  </ItemGroup>
+</Project>

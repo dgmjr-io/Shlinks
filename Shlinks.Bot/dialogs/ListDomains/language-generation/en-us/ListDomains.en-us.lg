@@ -1,0 +1,37 @@
+[import](common.lg)
+
+# SendActivity_hiNL7F()
+[Activity
+    Text = ${SendActivity_hiNL7F_text()}
+]
+
+# SendActivity_hiNL7F_text()
+- I can help you create links for a single domain: ${settings["Shlinks"].defaultDomain}.
+# ChoiceInput_Prompt_SjDE2u_text()
+- I can help you create links in any of the following domains.  Tap the one you want to work with:
+- The domains I support are listed below..  Tap the one you want to work with:
+# ChoiceInput_Prompt_SjDE2u()
+[Activity
+    Text = ${ChoiceInput_Prompt_SjDE2u_text()}
+]
+
+# ChoiceInput_InvalidPrompt_SjDE2u_text()
+- Sorry, Bro...you have to pick from one of the options I gave you.
+# ChoiceInput_InvalidPrompt_SjDE2u()
+[Activity
+    Text = ${ChoiceInput_InvalidPrompt_SjDE2u_text()}
+]
+
+# ChoiceInput_DefaultValueResponse_SjDE2u_text()
+- Ok, Bro...I give up.  We're gonna use "${settings["Shlinks"].defaultDomain}."
+# ChoiceInput_DefaultValueResponse_SjDE2u()
+[Activity
+    Text = ${ChoiceInput_DefaultValueResponse_SjDE2u_text()}
+]
+
+# SendActivity_fFtZc6_text()
+- Great! I'll use the domain "${conversation.link.domain}" from now on.
+# SendActivity_fFtZc6()
+[Activity
+    Text = ${SendActivity_fFtZc6_text()}
+]

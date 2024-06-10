@@ -1,0 +1,136 @@
+{
+  "folders": [
+    {
+      "name": "Shlinks",
+      "path": "."
+    },
+    {
+      "name": "BotFramework",
+      "path": "../../BotFramework"
+    },
+    {
+      "name": "Telegram.Bot.Components",
+      "path": "../../Telegram/src/Bot.Components"
+    },
+    {
+      "name": "Bot.Identity",
+      "path": "../../Telegram/src/Bot.Identity"
+    },
+    {
+      "name": "Extensions",
+      "path": "../../Types/Extensions"
+    },
+    {
+      "name": "Configuration",
+      "path": "../../AspNetCore/src/Configuration"
+    },
+    {
+      "name": "Packages",
+      "path": "../../../Packages/Packages"
+    },
+    {
+      "path": "../../../Packages"
+    },
+    {
+      "path": "../../../../jsonschema.xyz/jsonschema.xyz/schemas"
+    }
+  ],
+  "settings": {
+    "[markdown]": {
+      "editor.fontSize": 10,
+      "editor.lineHeight": 10,
+      "editor.lineNumbers": "on",
+      "editor.minimap.enabled": false,
+      "editor.quickSuggestions": {
+        "comments": "on",
+        "other": "on",
+        "strings": "on"
+      },
+      "editor.wordWrap": "wordWrapColumn",
+      "editor.wordWrapColumn": 128
+    },
+    "[msbuild]": {
+      "editor.fontSize": 10,
+      "editor.lineHeight": 10,
+      "editor.lineNumbers": "on",
+      "editor.minimap.enabled": false,
+      "editor.quickSuggestions": {
+        "other": "on",
+        "comments": "on",
+        "strings": "on"
+      },
+      "editor.wordWrap": "off",
+      "editor.autoIndent": "advanced",
+      "editor.acceptSuggestionOnEnter": "on",
+      "editor.defaultFormatter": "ms-vscode.anycode"
+    },
+    "[powershell]": {
+      "debug.saveBeforeStart": "nonUntitledEditorsInActiveGroup",
+      "editor.semanticHighlighting.enabled": false,
+      "editor.wordSeparators": "`~!@#$%^&*()=+[{]}\\|;:'\",.<>/?",
+      "editor.defaultFormatter": "ms-vscode.powershell"
+    },
+    "azureAutomation.directory.basePath": "Users/david/GitHub",
+    "cody.debug.enable": true,
+    "cody.debug.verbose": true,
+    "cody.experimental.chatPredictions": true,
+    "cody.useContext": "blended",
+    "DockerRun.DisableAutoGenerateConfig": true,
+    "docwriter.custom.author": "David G. Moore, Jr. &lt;david@dgmjr.io&gt;",
+    "docwriter.language": "English",
+    "docwriter.progress.trackClasses": false,
+    "docwriter.progress.trackFunctions": false,
+    "docwriter.progress.trackMethods": false,
+    "docwriter.progress.trackTypes": false,
+    "docwriter.style": "XML",
+    "dotnet-test-explorer.addProblems": true,
+    "dotnet-test-explorer.codeLensFailed": "𝓕𝓪𝓲𝓵𝓮𝓭 ❌",
+    "dotnet-test-explorer.codeLensPassed": "𝗣𝗮𝘀𝘀𝗲𝗱 ✅",
+    "dotnet-test-explorer.codeLensSkipped": "🅢🅚🅘🅟🅟🅔🅓!",
+    "dotnet-test-explorer.showCodeLens": true,
+    "dotnet-test-explorer.testProjectPath": "**/*Tests.@(csproj|vbproj|fsproj)",
+    "dotnet.defaultSolution": "dgmjr-io.sln",
+    "genieai.azure.url": "https://dgmjr-io.openai.azure.com/openai/deployments/code-davinci-002/completions?api-version=2023-03-15-preview",
+    "genieai.openai.model": "code-davinci-002",
+    "jira.apiToken": "ATATT3xFfGF079b5NhqmGe05ZKrsCjmJAkr6LC4YpK6KMKJOeOfILbe5MDa7P6FV5TmxKvz6SR3mNjtxw_JAnHUaT1hd_Kw4JHWNnpT6RPEFaFbt-xJQgqaBVYSzkKnd57FD99eqCE1aic1IKSWery_wrgnUqmRGYFPvPc9zQ57exhHmusFg-jI=794AF78E",
+    "jira.baseUrl": "https://dgmjr.atlassian.net",
+    "jira.username": "david@dgmjr.io",
+    "markdown-checkbox.checkmark": "✅",
+    "markdown-checkboxes.enable": true,
+    "markdown-mermaid.darkModeTheme": "dark",
+    "markdown-preview-enhanced.automaticallyShowPreviewOfMarkdownBeingEdited": true,
+    "markdown-preview-enhanced.codeBlockTheme": "github.css",
+    "markdown-preview-enhanced.Domain": "https://github.com",
+    "markdown-preview-enhanced.enableCriticMarkupSyntax": "true",
+    "markdown-preview-enhanced.enableEmojiSyntax": true,
+    "markdown-preview-enhanced.enableExtendedTableSyntax": true,
+    "markdown-preview-enhanced.enableLinkify": true,
+    "markdown-preview-enhanced.enableScriptExecution": "true",
+    "markdown-preview-enhanced.enableWikiLinkSyntax": true,
+    "markdown-preview-enhanced.frontMatterRenderingOption": "table",
+    "markdown-preview-enhanced.liveUpdate": true,
+    "markdown-preview-enhanced.mermaidTheme": "dark",
+    "markdown-preview-enhanced.previewTheme": "github-dark.css",
+    "markdown-preview-enhanced.revealjsTheme": "black.css",
+    "markdown-preview-github-styles.colorTheme": "dark",
+    "markdown.addFrontMatterTitle": true,
+    "omnisharp.enableRoslynAnalyzers": true,
+    "powershell.cwd": "/Users/david/GitHub/dgmjr-io",
+    "search.useGlobalIgnoreFiles": true,
+    "search.useIgnoreFiles": true,
+    "search.useParentIgnoreFiles": true,
+    "secrets.enabledFolders": [
+      "/Users/david/GitHub/dgmjr-io/.secrets"
+    ],
+    "swaggerhub.apiKey": "2f265792-bc35-462d-8244-62d92dc493a2",
+    "swaggerhub.orgs": [
+      "dgmjr.io",
+      "dgmoore.com"
+    ],
+    "yaml.schemas": {
+      "file:///Users/david/.vscode/extensions/atlassian.atlascode-2.10.12/resources/schemas/pipelines-schema.json": "bitbucket-pipelines.yml",
+      "https://json.schemastore.org/github-issue-config.json": "file:///Users/david/GitHub/dgmjr-io/.github/ISSUE_TEMPLATE/config.yml",
+      "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
+    }
+  }
+}

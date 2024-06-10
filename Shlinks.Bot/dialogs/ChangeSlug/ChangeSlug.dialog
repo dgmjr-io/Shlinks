@@ -1,0 +1,60 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "PcBtHy",
+    "name": "ChangeSlug",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "6IFEdo"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "p6JBMl"
+          },
+          "value": "ChangeSlug"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "ZN3NEi"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "prompt": "${TextInput_Prompt_ZN3NEi()}",
+          "property": "conversation.link.slug"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "b4apOh"
+          },
+          "activity": "${SendActivity_b4apOh()}"
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "RY0RzC"
+          },
+          "resultProperty": "turn.poppedValue"
+        }
+      ]
+    }
+  ],
+  "generator": "ChangeSlug.lg",
+  "recognizer": "ChangeSlug.lu.qna",
+  "id": "ChangeSlug"
+}

@@ -1,0 +1,74 @@
+[import](common.lg)
+
+# SendActivity_qQwLjI()
+[Activity
+    Text = ${SendActivity_qQwLjI_text()}
+]
+
+# SendActivity_qQwLjI_text()
+- Sorry, I didn't find a link with the slug "${turn.recognized.entities.slug[0]}" in the ${conversation.link.domain} domain.
+# SendActivity_rpLr0w()
+[Activity
+    Text = ${SendActivity_rpLr0w_text()}
+]
+
+# SendActivity_rpLr0w_text()
+- Ok, I won't delete it.
+# Shlinks.SelectLink_Prompt_CgJU44()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_CgJU44_text()}
+]
+
+# Shlinks.SelectLink_Prompt_CgJU44_text()
+- Select a link:
+# Shlinks.SelectLink_Prompt_Ofojtx()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_Ofojtx_text()}
+]
+
+# Shlinks.SelectLink_Prompt_Ofojtx_text()
+- Select a link:
+# Shlinks.SelectLink_InvalidPrompt_CgJU44()
+[Activity
+    Text = ${Shlinks.SelectLink_InvalidPrompt_CgJU44_text()}
+]
+
+# Shlinks.SelectLink_InvalidPrompt_CgJU44_text()
+- You knucklehead! That wasn't one of the options!
+# Shlinks.SelectLink_UnrecognizedPrompt_Ofojtx()
+[Activity
+    Text = ${Shlinks.SelectLink_UnrecognizedPrompt_Ofojtx_text()}
+]
+
+# Shlinks.SelectLink_UnrecognizedPrompt_Ofojtx_text()
+- You knucklehead! That wasn't one of the options!
+# Shlinks.SelectLink_InvalidPrompt_Ofojtx()
+[Activity
+    Text = ${Shlinks.SelectLink_InvalidPrompt_Ofojtx_text()}
+]
+
+# Shlinks.SelectLink_InvalidPrompt_Ofojtx_text()
+- You knucklehead! That wasn't one of the options!
+# Shlinks.SelectLink_Prompt_7pZ8Kw()
+[Activity
+    Text = ${Shlinks.SelectLink_Prompt_7pZ8Kw_text()}
+]
+
+# Shlinks.SelectLink_Prompt_7pZ8Kw_text()
+- Select a link:
+# SendActivity_P7NBiq_text()
+- The link ${turn.selectedLink.shortUrl} has been deleted.
+# SendActivity_P7NBiq()
+[Activity
+    Text = ${SendActivity_P7NBiq_text()}
+]
+
+# SendActivity_7BBRum()
+[Activity
+    Text = ${SendActivity_7BBRum_text()}
+]
+
+# SendActivity_7BBRum_text()
+- Ok, I didn't delete anything.
+- Ok, it's cancelled.
+- Cancelled.

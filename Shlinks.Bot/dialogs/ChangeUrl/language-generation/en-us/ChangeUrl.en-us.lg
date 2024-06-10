@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# SendActivity_Yh8F8i_text()
+- Ok, I'll use the URL "${conversation.link.url}."
+# SendActivity_Yh8F8i()
+[Activity
+    Text = ${SendActivity_Yh8F8i_text()}
+]
+
+# BotBuilderCommunityInternetProtocolInput_Prompt_SXGiPp()
+[Activity
+    Text = ${BotBuilderCommunityInternetProtocolInput_Prompt_SXGiPp_text()}
+]
+
+# BotBuilderCommunityInternetProtocolInput_Prompt_SXGiPp_text()
+- Enter the URL where this shortlink should go:
+# BotBuilderCommunityInternetProtocolInput_InvalidPrompt_SXGiPp()
+[Activity
+    Text = ${BotBuilderCommunityInternetProtocolInput_InvalidPrompt_SXGiPp_text()}
+]
+
+# BotBuilderCommunityInternetProtocolInput_InvalidPrompt_SXGiPp_text()
+- Sorry, Bro, that wasn't a valid URL.  Enter it in the format, "https://somewhere.com."

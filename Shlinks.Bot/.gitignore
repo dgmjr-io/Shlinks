@@ -1,0 +1,7 @@
+# files generated during the lubuild process
+generated/
+bot/
+NuGet.config
+bin/**/*
+obj/**/*
+[Ll]ogs/*

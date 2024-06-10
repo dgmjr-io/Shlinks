@@ -1,0 +1,58 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "menu": {
+    "submenu": [
+      "Shlinks"
+    ]
+  },
+  "form": {
+    "hidden": [],
+    "subtitle": "Delete a shortlink using the Shlinks API.",
+    "fieldsets": [
+      {
+        "title": "API Connectivity",
+        "description": "Connectivity properties for the API",
+        "defaultExpanded": true,
+        "fields": [
+          "apiKey",
+          "baseUrl"
+        ]
+      },
+      {
+        "title": "Shortlink",
+        "description": "Information about the shortlink",
+        "defaultExpanded": true,
+        "fields": [
+          "linkId"
+        ]
+      },
+      {
+        "title": "Other",
+        "defaultExpanded": false,
+        "fields": [
+          "*"
+        ]
+      }
+    ],
+    "pivotFieldsets": false
+  },
+  "flow": {
+    "widget": "ActionCard",
+    "header": {
+      "widget": "ActionHeader",
+      "title": "Delete a shortlink",
+      "icon": "RemoveLinkChain",
+      "subtitle": "Delete a shortlink.",
+      "colors": {
+        "theme": "#224a8a",
+        "color": "#FFFFFF",
+        "icon": "#FFFFFF"
+      }
+    },
+    "body": {
+      "widget": "ListOverview",
+      "items": "=[\"Link: \" + action.linkId]"
+    },
+    "hideFooter": true
+  }
+}

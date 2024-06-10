@@ -1,0 +1,23 @@
+{
+  "$schema": "https://jsonschema.xyz/global.json.schema",
+  "msbuild-sdks": {
+    "DgmjrSdk": "0.0.1-Local",
+    "Dgmjr.NET.Sdk": "0.0.1-Local",
+    "JustInTimeVersioningSdk": "0.0.1-Local",
+    "MetapackageSdk": "0.0.1-Local",
+    "Microsoft.Build.Artifacts": "6.0.0",
+    "Microsoft.Build.CentralPackageVersions": "2.1.3",
+    "Microsoft.Build.NoTargets": "3.7.0",
+    "Microsoft.Build.Traversal": "4.1.0",
+    "Microsoft.Build.Sql": "0.1.14-preview",
+    "Microsoft.VisualStudio.SlnGen": "10.4.0",
+    "NuGetPush": "0.0.1-Local",
+    "UsingsSdk": "0.0.1-Local"
+  },
+  "sdk": {
+    // "version": "9.0.100-preview.1.24101.2",
+    // "version": "8.0.203",
+    // "version": "8.0.301",
+    "rollForward": "latestPatch"
+  }
+}

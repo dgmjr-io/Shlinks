@@ -1,0 +1,71 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "form": {
+    "label": "Select a Link",
+    "subtitle": "Present the user with a list of links for him to select from",
+    "order": [
+      "apiKey",
+      "domain",
+      "baseUrl",
+      "property",
+      "prompt",
+      "*"
+    ],
+    "hidden": [
+      "defaultLocale",
+      "allowInterruptions",
+      "defaultValue",
+      "maxTurnCount",
+      "validations",
+      "defaultValueResponse"
+    ],
+    "properties": {
+      "property": {
+        "intellisenseScopes": [
+          "variable-scopes",
+          "expressions",
+          "user-variables"
+        ]
+      },
+      "resultProperty": {
+        "description": "Property to store the selected link",
+        "intellisenseScopes": [
+          "variable-scopes",
+          "expressions",
+          "user-variables"
+        ]
+      }
+    }
+  },
+  "menu": {
+    "label": "Select a Link",
+    "submenu": [
+      "Shlinks"
+    ]
+  },
+  "flow": {
+    "widget": "ActionCard",
+    "header": {
+      "title": "Select a Link",
+      "widget": "ActionHeader",
+      "disableSDKTitle": true,
+      "icon": "LinkedDatabase",
+      "menu": "none",
+      "colors": {
+        "theme": "#BBEAF4",
+        "icon": "#5C2E91"
+      }
+    },
+    "body": {
+      "widget": "LgWidget",
+      "field": "prompt",
+      "defaultContent": "<prompt>"
+    },
+    "footer": {
+      "widget": "PropertyDescription",
+      "property": "=action.resultProperty",
+      "description": "= (selected link)"
+    },
+    "hideFooter": "=!action.property"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "OLG8Jc",
+    "name": "DeleteLink",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Njze5j"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "95JdEX"
+          },
+          "value": "DeleteLink"
+        },
+        {
+          "$kind": "Shlinks.SelectLink",
+          "$designer": {
+            "id": "7pZ8Kw"
+          },
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "property": "turn.selectedLink",
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "resultProperty": "turn.selectedLink",
+          "prompt": "${Shlinks.SelectLink_Prompt_7pZ8Kw()}",
+          "domain": "=coalesce(conversation.link.domain, settings[\"Shlinks\"].defaultDomain)"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "WT7Jv0"
+          },
+          "property": "conversation.selectedLink",
+          "value": "=turn.selectedLink"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "sFYkzv"
+          },
+          "condition": "=turn.selectedLink != null",
+          "actions": [
+            {
+              "$kind": "Shlinks.DeleteShortLink",
+              "$designer": {
+                "id": "WwQqBG"
+              },
+              "apiKey": "=settings[\"Shlinks\"].apiKey",
+              "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+              "disabled": false,
+              "resultProperty": "turn.result",
+              "linkId": "=turn.selectedLink.idString"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "P7NBiq"
+              },
+              "activity": "${SendActivity_P7NBiq()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "7BBRum"
+              },
+              "activity": "${SendActivity_7BBRum()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "FjGDEC"
+          },
+          "resultProperty": "turn.poppedValue"
+        }
+      ]
+    }
+  ],
+  "generator": "DeleteLink.lg",
+  "recognizer": "DeleteLink.lu.qna",
+  "id": "DeleteLink"
+}

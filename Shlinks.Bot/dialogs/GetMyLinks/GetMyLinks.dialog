@@ -1,0 +1,164 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "EsBLLx",
+    "name": "GetMyLinks",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "5f3O7r"
+      },
+      "actions": [
+        {
+          "$kind": "Shlinks.SelectLink",
+          "$designer": {
+            "id": "GI903I"
+          },
+          "domain": "=conversation.link.domain",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "unrecognizedPrompt": "${Shlinks.SelectLink_UnrecognizedPrompt_GI903I()}",
+          "prompt": "${Shlinks.SelectLink_Prompt_GI903I()}",
+          "resultProperty": "=turn.selectedLink"
+        },
+        {
+          "$kind": "Shlinks.DeleteShortLink",
+          "$designer": {
+            "id": "7TAZVV"
+          },
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "resultProperty": "dialog.result",
+          "linkId": "=turn.selectedLink.id"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "2HBJSQ"
+          },
+          "activity": "${SendActivity_2HBJSQ()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "VWeAYy"
+          }
+        },
+        {
+          "$kind": "Shlinks.ListDomains",
+          "$designer": {
+            "id": "nhnxDj"
+          },
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "resultProperty": "conversation.domains"
+        },
+        {
+          "$kind": "Shlinks.GetMyLinks",
+          "$designer": {
+            "id": "ag6sCc"
+          },
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "resultProperty": "user.myLinks",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "domain": "=conversation.link.domain",
+          "fullResponse": true
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "ZwnRfW"
+          },
+          "assignments": [
+            {
+              "property": "user.myLinks",
+              "value": "=conversation.myLinks"
+            },
+            {
+              "property": "turn.linksMenu",
+              "value": "=\"\""
+            },
+            {
+              "property": "turn.linksChoices",
+              "value": "=user.myLinks.AsCardActions"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.TelemetryTrackEventAction",
+          "$designer": {
+            "id": "ytPuPX"
+          },
+          "eventName": "user.myLinks",
+          "properties": {
+            "asChoices": "=user.myLinks.asChoices",
+            "AsChoices": "=user.myLinks.asCardActions"
+          }
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "Gi3hGp"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "property": "dialog.choice",
+          "prompt": "${TextInput_Prompt_Gi3hGp()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "dQHhSf"
+          },
+          "condition": "=contains(select(user.myLinks, link, link.id), dialog.choice)",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "JoXrLm"
+              },
+              "activity": "${SendActivity_JoXrLm()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "6VIJDz"
+              },
+              "activityProcessed": true
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Shlinks.DeleteShortLink",
+              "$designer": {
+                "id": "8kjzYa"
+              },
+              "apiKey": "=settings[\"Shlinks\"].apiKey",
+              "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+              "resultProperty": "dialog.result",
+              "linkId": "=dialog.choice"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GetMyLinks.lg",
+  "recognizer": "GetMyLinks.lu.qna",
+  "id": "GetMyLinks"
+}

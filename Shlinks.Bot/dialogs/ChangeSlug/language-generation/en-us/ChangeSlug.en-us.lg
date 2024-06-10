@@ -1,0 +1,18 @@
+[import](common.lg)
+
+# TextInput_Prompt_ZN3NEi_text()
+- Enter the "slug," I.e., the portion of the link that will come after ${conversation.link.domain} as in "https://${conversation.link.domain}/slug:"
+# TextInput_Prompt_ZN3NEi()
+[Activity
+    Text = ${TextInput_Prompt_ZN3NEi_text()}
+]
+
+# SendActivity_b4apOh_text()
+- Cool.  I'll use the slug "${conversation.link.slug}."
+- Ok,  I'll use the slug "${conversation.link.slug}."
+- Great!  I'll use the slug "${conversation.link.slug}."
+# SendActivity_b4apOh()
+[Activity
+    Text = ${SendActivity_b4apOh_text()}
+]
+

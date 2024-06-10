@@ -1,0 +1,252 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "SOZtFA",
+    "name": "ConfirmLink",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "KEyt02"
+      },
+      "actions": [
+        {
+          "$kind": "Dgmjr.PushCurrentOperation",
+          "$designer": {
+            "id": "MZ6p2d"
+          },
+          "value": "CofirmLink"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "qAemzN"
+          },
+          "defaultLocale": "en-us",
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${ChoiceInput_Prompt_qAemzN()}",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            {
+              "value": "yes",
+              "action": {
+                "type": "imBack",
+                "title": "Yep, everything looks good!",
+                "value": "yes"
+              }
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the URL",
+                "value": "url"
+              },
+              "value": "url"
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the slug",
+                "value": "slug"
+              },
+              "value": "slug"
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the tags",
+                "value": "tags"
+              },
+              "value": "tags"
+            },
+            {
+              "action": {
+                "type": "imBack",
+                "title": "Change the domain",
+                "value": "domaom"
+              },
+              "value": "domain"
+            }
+          ],
+          "property": "dialog.choice",
+          "style": "suggestedAction"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "RHKW68"
+          },
+          "condition": "=dialog.choice",
+          "cases": [
+            {
+              "value": "yes",
+              "actions": [
+                {
+                  "$kind": "Shlinks.CreateShortLink",
+                  "$designer": {
+                    "id": "3pmHbh"
+                  },
+                  "slug": "=conversation.link.slug",
+                  "domain": "=conversation.link.domain",
+                  "url": "=conversation.link.url",
+                  "tags": "=conversation.link.tags",
+                  "resultProperty": "turn.createdLink",
+                  "apiKey": "=settings[\"Shlinks\"].apiKey",
+                  "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+                  "validation": []
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "NTtK0J"
+                  },
+                  "activity": "${SendActivity_NTtK0J()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Nlm7ri"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "SayThanks"
+                }
+              ]
+            },
+            {
+              "value": "url",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Rc2pu4"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ChangeUrl"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "fG7V3z"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            },
+            {
+              "value": "slug",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "vf8qEP"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ChangeSlug"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "8Y9DRi"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            },
+            {
+              "value": "tags",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "CAYNBw"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "AddTags"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "0vZgfc"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            },
+            {
+              "value": "domain",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "1rad48"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ListDomains",
+                  "options": {
+                    "ShowHelp": "false"
+                  }
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "i4cWID"
+                  },
+                  "activityProcessed": true
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "p9a03Y"
+              },
+              "activity": "${SendActivity_p9a03Y()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "MrzMIT"
+              },
+              "activityProcessed": true
+            }
+          ]
+        },
+        {
+          "$kind": "Dgmjr.PopCurrentOperation",
+          "$designer": {
+            "id": "nPafRT"
+          },
+          "resultProperty": "turn.poppedValue"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "0Am0Lg"
+          },
+          "activityProcessed": true
+        }
+      ]
+    }
+  ],
+  "generator": "ConfirmLink.lg",
+  "recognizer": "ConfirmLink.lu.qna",
+  "id": "ConfirmLink"
+}

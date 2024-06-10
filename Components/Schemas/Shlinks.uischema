@@ -1,0 +1,40 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "form": {
+    "label": "Shlinks API Configuration",
+    "description": "Connects the bot to Shlinks's link shortener service.",
+    "helpLink": "https://developers.Shlinks/",
+    "order": [
+      "*"
+    ],
+    "fieldsets": [
+      {
+        "title": "API Connectivity",
+        "defaultExpanded": true,
+        "fields": [
+          "apiKey",
+          "baseUrl"
+        ]
+      },
+      {
+        "title": "Domains",
+        "defaultExpanded": true,
+        "fields": [
+          "defaultDomain",
+          "domains",
+          "defaultTags"
+        ]
+      },
+      {
+        "title": "Permissions",
+        "defaultExpanded": true,
+        "fields": [
+          "linkCreators",
+          "linkAdministrators",
+          "administratorUsername",
+          "unauthorizedMessage"
+        ]
+      }
+    ]
+  }
+}

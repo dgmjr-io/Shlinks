@@ -1,0 +1,23 @@
+[import](common.lg)
+
+# BotBuilderCommunityInternetProtocolInput_Prompt_3G7S9h()
+[Activity
+    Text = ${BotBuilderCommunityInternetProtocolInput_Prompt_3G7S9h_text()}
+]
+
+# BotBuilderCommunityInternetProtocolInput_Prompt_3G7S9h_text()
+- Enter the URL where this shortlink should go:
+# BotBuilderCommunityInternetProtocolInput_InvalidPrompt_3G7S9h()
+[Activity
+    Text = ${BotBuilderCommunityInternetProtocolInput_InvalidPrompt_3G7S9h_text()}
+]
+
+# BotBuilderCommunityInternetProtocolInput_InvalidPrompt_3G7S9h_text()
+- Sorry, Bro, that wasn't a valid URL.  Enter it in the format, "https://somewhere.com."
+# SendActivity_FWSf6D()
+[Activity
+    Text = ${SendActivity_FWSf6D_text()}
+]
+
+# SendActivity_FWSf6D_text()
+- ${settings["Shlinks"].unauthorizedMessage}

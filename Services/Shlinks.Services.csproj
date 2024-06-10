@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0</TargetFrameworks>
+    <NoWarn>$(NoWarn);CS9107;RF001</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dgmjr.BotFramework.Core" />
+    <PackageReference Include="Microsoft.Extensions.Logging" />
+    <PackageReference Include="Newtonsoft.Json.Extensions" />
+    <PackageReference Include="System.Net.Http" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive.Runtime" />
+    <PackageReference Include="Microsoft.Bot.Builder.Dialogs.Adaptive" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../Models/Shlinks.Models.csproj" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <PackageFile Include="icon.png" Pack="true" PackagePath="icon.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Using Include="Microsoft.Extensions.DependencyInjection" />
+    <Using Include="Microsoft.Extensions.Logging" />
+    <Using Include="Microsoft.Extensions.Options" />
+    <Using Include="Shlinks.Requests" />
+    <Using Include="Shlinks.Models" />
+    <Using Include="Shlinks.Api" />
+    <Using Include="Shlinks.Services" />
+    <Using Include="Shlinks" />
+    <Using Include="System.Net.Http" />
+  </ItemGroup>
+
+</Project>

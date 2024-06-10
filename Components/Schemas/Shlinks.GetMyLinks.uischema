@@ -1,0 +1,55 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "menu": {
+    "submenu": [
+      "Shlinks"
+    ]
+  },
+  "form": {
+    "hidden": [],
+    "subtitle": "Retrieve the user's shortlinks or all shortlinks if the user is a link administrator.",
+    "fieldsets": [
+      {
+        "title": "API Key & Result",
+        "description": "Connectivity and result properties for the API",
+        "defaultExpanded": true,
+        "fields": [
+          "apiKey",
+          "domain",
+          "resultProperty",
+          "baseUrl",
+          "fullResponse"
+        ]
+      },
+      {
+        "title": "Other",
+        "description": "Other properties",
+        "defaultExpanded": true,
+        "fields": [
+          "*"
+        ]
+      }
+    ],
+    "pivotFieldsets": false
+  },
+  "flow": {
+    "widget": "ActionCard",
+    "header": {
+      "widget": "ActionHeader",
+      "title": "Get My Links for ${action.domain}",
+      "icon": "LinkedDatabase",
+      "subtitle": "Get the links created by the currently logged-in user or all users if the user is a link administrator.",
+      "colors": {
+        "theme": "#f2bdf0",
+        "color": "#000000",
+        "icon": "#000000"
+      }
+    },
+    "body": {
+      "widget": "PropertyDescription",
+      "property": "=action.resultProperty",
+      "description": "(the links)"
+    },
+    "hideFooter": true
+  }
+}

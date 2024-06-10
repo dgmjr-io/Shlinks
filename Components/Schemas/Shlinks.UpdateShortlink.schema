@@ -1,0 +1,96 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "extends(Shlinks.BotComponent)",
+  "type": "object",
+  "title": "Update a Shortlink",
+  "description": "Updates a shortlink using the Shlinks API.",
+  "required": [
+    "url",
+    "domain",
+    "slug",
+    "baseUrl",
+    "apiKey",
+    "linkId"
+  ],
+  "properties": {
+    "linkId": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Link ID",
+      "description": "The unique string ID of the link",
+      "examples": [
+        "link_133456",
+        "=conversation.link.idString"
+      ]
+    },
+    "url": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "URL",
+      "description": "The URL to which the shortlink will point",
+      "examples": [
+        "https://google.com",
+        "=conversation.link.url"
+      ]
+    },
+    "domain": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Domain",
+      "description": "The shortlink domain (must be registered in Shlinks FIRST)",
+      "examples": [
+        "myshortdomain.link",
+        "=conversation.link.domain"
+      ]
+    },
+    "slug": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Slug",
+      "description": "The \"slug,\" or portion of the link that comes after the domain as in \"https://myshortdomain.link/*slug*\"",
+      "examples": [
+        "the-slug",
+        "=conversation.link.slug"
+      ]
+    },
+    "tags": {
+      "$ref": "schema:#/definitions/arrayExpression",
+      "title": "Tags",
+      "description": "The \"tags\" for the link, metadata to aid in link organization",
+      "examples": [
+        "fuck me",
+        "in the ass",
+        "=conversation.link.tags"
+      ]
+    },
+    "validation": {
+      "$ref": "schema:#/definitions/arrayExpression",
+      "title": "Validation Expressions",
+      "description": "These expressions must evaluate to *true* for the link to be created.",
+      "items": {
+        "oneOf": [
+          {
+            "type": "boolean",
+            "title": "Boolean",
+            "description": "Boolean constant.",
+            "default": false,
+            "examples": [
+              false
+            ]
+          },
+          {
+            "$role": "expression",
+            "type": "string",
+            "title": "Expression",
+            "description": "Expression starting with =.",
+            "pattern": "^=.*\\S.*",
+            "examples": [
+              "=user.name"
+            ]
+          }
+        ],
+        "title": "Validation Expression",
+        "description": "This expression must evaluate to *true* for the link to be created."
+      },
+      "examples": [
+        "=startsWith(conversation.link.url, \"https://\")"
+      ]
+    }
+  }
+}

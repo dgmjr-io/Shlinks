@@ -1,0 +1,57 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/ui/v1.0/ui.schema",
+  "menu": {
+    "submenu": [
+      "Shlinks"
+    ]
+  },
+  "form": {
+    "hidden": [],
+    "subtitle": "Returns detailed statistics for link in given period.",
+    "fieldsets": [
+      {
+        "title": "API Key & Result",
+        "description": "Connectivity and result properties for the API",
+        "defaultExpanded": true,
+        "fields": [
+          "apiKey",
+          "resultProperty",
+          "baseUrl"
+        ]
+      },
+      {
+        "title": "Other Options",
+        "description": "Other options for the API",
+        "defaultExpanded": true,
+        "fields": [
+          "*"
+        ]
+      }
+    ],
+    "pivotFieldsets": false
+  },
+  "flow": {
+    "widget": "ActionCard",
+    "header": {
+      "widget": "ActionHeader",
+      "title": "Get Link Stats",
+      "icon": "NumberSequence",
+      "subtitle": "Get the statistics for a given link",
+      "colors": {
+        "theme": "#ffdd00",
+        "color": "#000000",
+        "icon": "#000000"
+      }
+    },
+    "body": {
+      "widget": "ListOverview",
+      "items": "=[\"Link: \" + action.linkId, \"Period: \" + action.period, \"Clicks Chart Interval: \" + action.clicksChartInterval]"
+    },
+    "footer": {
+      "widget": "PropertyDescription",
+      "property": "=action.resultProperty",
+      "description": "(link stats)"
+    },
+    "hideFooter": false
+  }
+}

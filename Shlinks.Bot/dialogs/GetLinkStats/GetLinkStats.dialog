@@ -1,0 +1,101 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "B1giWo",
+    "name": "GetLinkStats",
+    "comment": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "LoEblH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "6K3UMP"
+          },
+          "assignments": [
+            {
+              "property": "conversation.currentOperation",
+              "value": "LinkStats"
+            }
+          ]
+        },
+        {
+          "$kind": "Shlinks.SelectLink",
+          "$designer": {
+            "id": "6BKraf"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": true,
+          "allowInterruptions": true,
+          "apiKey": "=settings[\"Shlinks\"].apiKey",
+          "baseUrl": "=settings[\"Shlinks\"].baseUrl",
+          "resultProperty": "turn.selectedLink",
+          "unrecognizedPrompt": "${Shlinks.SelectLink_UnrecognizedPrompt_6BKraf()}",
+          "prompt": "${Shlinks.SelectLink_Prompt_6BKraf()}",
+          "property": "turn.selectedLink",
+          "domain": "=coalesce(conversation.link.domain, settings[\"Shlinks\"].defaultDomain)"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "yUYGDQ"
+          },
+          "assignments": [
+            {
+              "property": "dialog.selectedLinkId",
+              "value": "=turn.selectedLink.idString"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Z6eYAV"
+          },
+          "condition": "=turn.selectedLink != null",
+          "actions": [
+            {
+              "$kind": "Shlinks.GetLinkStats",
+              "$designer": {
+                "id": "f85kMk"
+              },
+              "timeZone": "EST5EDT",
+              "apiKey": "=settings[\"Shlinks\"].apiKey",
+              "baseUrl": "=settings[\"Shlinks\"].statsBaseUrl",
+              "resultProperty": "turn.linkStats",
+              "linkId": "=turn.selectedLink.idString",
+              "clicksChartInterval": "week",
+              "showStats": true,
+              "period": "total"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "UQtl5e"
+          },
+          "assignments": [
+            {
+              "property": "conversation.currentOperation",
+              "value": "=null"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "GetLinkStats.lg",
+  "recognizer": "GetLinkStats.lu.qna",
+  "id": "GetLinkStats"
+}

@@ -1,0 +1,85 @@
+{
+  "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+  "$role": "extends(Shlinks.BotComponent)",
+  "type": "object",
+  "title": "Get Link Stats",
+  "description": "Retrieve the link's statistics using the Shlinks Statistics API.",
+  "required": [
+    "linkId",
+    "timeZone",
+    "period",
+    "clicksChartInterval",
+    "resultProperty"
+  ],
+  "properties": {
+    "linkId": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Link ID",
+      "description": "The ID of the link to retrieve statistics for.",
+      "examples": [
+        "lnk_4tRM_CABxevPPlCiDrK2ENP8BO",
+        "=conversation.link.id"
+      ]
+    },
+    "timeZone": {
+      "$ref": "schema:#/definitions/Shlinks.TimeZone",
+      "title": "Time Zone",
+      "description": "The time zone to use for the statistics.",
+      "default": "EST5EDT",
+      "examples": [
+        "EST5EDT",
+        "=user.timeZone"
+      ]
+    },
+    "period": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Period",
+      "description": "One of predefined time intervals.",
+      "default": "total",
+      "examples": [
+        "total",
+        "=conversation.period"
+      ],
+      "enum": [
+        "today",
+        "yesterday",
+        "total",
+        "week",
+        "month",
+        "lastmonth",
+        "last7",
+        "last30"
+      ]
+    },
+    "clicksChartInterval": {
+      "$ref": "schema:#/definitions/stringExpression",
+      "title": "Clicks Chart Interval",
+      "description": "One of predefined time intervals for the clicks chart.",
+      "default": "hour",
+      "examples": [
+        "hour",
+        "day",
+        "week",
+        "month",
+        "=conversation.clicksChartInterval"
+      ],
+      "enum": [
+        "hour",
+        "day",
+        "week",
+        "month"
+      ]
+    },
+    "showStats": {
+      "$ref": "schema:#/definitions/booleanExpression",
+      "title": "Show Link Stats",
+      "description": "True to display the link stats; false to simply save them to the result property.",
+      "default": true,
+      "examples": [
+        true,
+        false,
+        "=conversation.showStats"
+      ]
+    }
+  }
+}
